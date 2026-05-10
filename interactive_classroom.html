@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Islamic Studies Classroom</title>
+<style>
+  :root {
+    --primary: #0d7377;
+    --secondary: #14919b;
+    --accent: #32e0c4;
+    --dark: #212121;
+    --light: #f4f9f9;
+    --card-bg: #ffffff;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+  header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 2rem 1rem; text-align: center; box-shadow: var(--shadow); }
+  header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  header p { opacity: 0.95; font-size: 1rem; }
+  .nav-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; padding: 1rem; background: white; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 6px rgba(0,0,0,0.05); }
+  .nav-tabs button { border: none; background: #e0f2f1; color: var(--primary); padding: 0.7rem 1.2rem; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all 0.2s; font-size: 0.95rem; }
+  .nav-tabs button.active, .nav-tabs button:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem; }
+  .module { display: none; animation: fadeIn 0.4s ease; }
+  .module.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .section-card { background: var(--card-bg); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 1.2rem; box-shadow: var(--shadow); }
+  .section-card h2 { color: var(--primary); margin-bottom: 0.8rem; font-size: 1.4rem; display: flex; align-items: center; gap: 0.5rem; }
+  .section-card h3 { color: var(--secondary); margin: 1rem 0 0.5rem; font-size: 1.1rem; }
+  .accordion { border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 0.6rem; overflow: hidden; }
+  .accordion-header { background: #fafafa; padding: 0.9rem 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: var(--dark); }
+  .accordion-header:hover { background: #f0f0f0; }
+  .accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: white; }
+  .accordion-body .content { padding: 1rem; }
+  .accordion.open .accordion-body { max-height: 800px; }
+  .accordion-icon { transition: transform 0.3s; }
+  .accordion.open .accordion-icon { transform: rotate(180deg); }
+  .quiz-box { background: #e0f2f1; border-left: 4px solid var(--accent); padding: 1rem; border-radius: 8px; margin: 1rem 0; }
+  .quiz-options label { display: block; padding: 0.6rem; margin: 0.4rem 0; background: white; border-radius: 6px; cursor: pointer; border: 2px solid transparent; transition: 0.2s; }
+  .quiz-options label:hover { border-color: var(--secondary); }
+  .quiz-options input { margin-right: 0.5rem; }
+  .quiz-feedback { margin-top: 0.8rem; padding: 0.6rem; border-radius: 6px; font-weight: 600; display: none; }
+  .correct { background: #c8e6c9; color: #2e7d32; }
+  .wrong { background: #ffcdd2; color: #c62828; }
+  .btn { background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: 600; margin-top: 0.5rem; }
+  .btn:hover { background: var(--secondary); }
+  .checklist { list-style: none; }
+  .checklist li { padding: 0.5rem 0; display: flex; align-items: center; gap: 0.6rem; }
+  .checklist input[type="checkbox"] { width: 1.2rem; height: 1.2rem; accent-color: var(--primary); cursor: pointer; }
+  .checklist label { cursor: pointer; }
+  .checklist input:checked + label { text-decoration: line-through; opacity: 0.7; }
+  .progress-wrap { margin: 1rem 0; }
+  .progress-bar { height: 10px; background: #e0e0e0; border-radius: 5px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--secondary)); width: 0%; transition: width 0.5s ease; }
+  .flashcard { background: white; border: 2px solid var(--primary); border-radius: var(--radius); padding: 1.5rem; text-align: center; cursor: pointer; min-height: 160px; display: flex; align-items: center; justify-content: center; flex-direction: column; transition: transform 0.3s; user-select: none; }
+  .flashcard:hover { transform: scale(1.01); }
+  .flashcard .back { display: none; color: var(--primary); font-weight: 600; }
+  .flashcard.flipped .front { display: none; }
+  .flashcard.flipped .back { display: block; }
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .pill { display: inline-block; background: var(--accent); color: var(--dark); padding: 0.3rem 0.8rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin: 0.2rem; }
+  .highlight { background: #fff9c4; padding: 0.1rem 0.3rem; border-radius: 4px; }
+  footer { text-align: center; padding: 2rem; color: #777; font-size: 0.9rem; margin-top: 2rem; }
+  @media (max-width: 600px) { header h1 { font-size: 1.4rem; } .nav-tabs button { padding: 0.6rem 0.9rem; font-size: 0.85rem; } }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Interactive Islamic Studies Classroom</h1>
+  <p>Grade 7–9 | English Medium | Lower Proficiency Support</p>
+</header>
+
+<nav class="nav-tabs">
+  <button class="tab-btn active" onclick="showModule(0)">🛠️ Design & Development</button>
+  <button class="tab-btn" onclick="showModule(1)">🧠 Islamic Psychology</button>
+  <button class="tab-btn" onclick="showModule(2)">📝 Assessment</button>
+  <button class="tab-btn" onclick="showModule(3)">📖 Inimitability of Qur'an</button>
+</nav>
+
+<div class="container">
+
+  <!-- MODULE 1: Design & Development -->
+  <div class="module active" id="mod0">
+    <div class="section-card">
+      <h2>🛠️ Design & Development</h2>
+      <p>Learn how to build a great lesson step by step. Click each part of the <strong>ADDIE</strong> model below.</p>
+      <div style="margin-top:1rem;">
+        <div class="accordion open">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>1. Analysis — What do students need?</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>Before teaching, ask:</p>
+            <ul class="checklist">
+              <li><input type="checkbox" id="a1" onchange="updateProgress('prog1')"><label for="a1">Who are my learners?</label></li>
+              <li><input type="checkbox" id="a2" onchange="updateProgress('prog1')"><label for="a2">What do they already know?</label></li>
+              <li><input type="checkbox" id="a3" onchange="updateProgress('prog1')"><label for="a3">What language level do they have?</label></li>
+              <li><input type="checkbox" id="a4" onchange="updateProgress('prog1')"><label for="a4">What are the learning objectives?</label></li>
+            </ul>
+            <div class="progress-wrap">Progress: <div class="progress-bar"><div class="progress-fill" id="prog1"></div></div></div>
+          </div></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>2. Design — Plan the journey</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>Write your <span class="highlight">learning objectives</span>, choose activities, and decide materials. Example:</p>
+            <ul>
+              <li>Objective: Students will explain the five pillars in simple English.</li>
+              <li>Activity: Group poster with drawing and labels.</li>
+              <li>Time: 20 minutes.</li>
+            </ul>
+          </div></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>3. Development — Build the materials</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>Make slides, worksheets, or HTML quizzes. Keep language <strong>simple</strong> and add visuals. Use:</p>
+            <div style="margin-top:0.5rem;">
+              <span class="pill">Pictures</span>
+              <span class="pill">Short sentences</span>
+              <span class="pill">Translation aids</span>
+              <span class="pill">Voice recordings</span>
+            </div>
+          </div></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>4. Implementation — Teach the lesson</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>Deliver the lesson. Be ready to adapt if students are confused. Tips:</p>
+            <ul>
+              <li>Speak slowly and repeat key words.</li>
+              <li>Use gestures and real objects.</li>
+              <li>Check understanding every 5 minutes.</li>
+            </ul>
+          </div></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>5. Evaluation — Did they learn?</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>Use a quick quiz or exit ticket. Ask: <em>“What is one thing you learned today?”</em></p>
+            <div class="quiz-box">
+              <p><strong>Quick Check:</strong> Which step comes <em>before</em> teaching the lesson?</p>
+              <div class="quiz-options">
+                <label><input type="radio" name="q1" value="wrong" onchange="checkQ1(this)"> Evaluation</label>
+                <label><input type="radio" name="q1" value="correct" onchange="checkQ1(this)"> Development</label>
+                <label><input type="radio" name="q1" value="wrong" onchange="checkQ1(this)"> Analysis</label>
+              </div>
+              <div class="quiz-feedback" id="fb1"></div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 2: Islamic Psychology -->
+  <div class="module" id="mod1">
+    <div class="section-card">
+      <h2>🧠 Islamic Psychology</h2>
+      <p>How do Muslim scholars understand the <strong>mind, heart, and soul</strong>? Tap the flashcards to reveal answers.</p>
+      <div class="grid-2" style="margin-top:1rem;">
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+          <div class="front">
+            <h3>🧠 Nafs (Soul/Self)</h3>
+            <p><em>Tap to learn more</em></p>
+          </div>
+          <div class="back">
+            <p>The <strong>nafs</strong> has three levels:</p>
+            <p>1. Nafs Ammarah — inclined to evil<br>2. Nafs Lawwamah — self-blaming<br>3. Nafs Mutma'innah — peaceful</p>
+          </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+          <div class="front">
+            <h3>❤️ Qalb (Heart)</h3>
+            <p><em>Tap to learn more</em></p>
+          </div>
+          <div class="back">
+            <p>The heart is the center of <strong>feeling, knowing, and intention</strong>. A sound heart (qalb salim) leads to true success.</p>
+          </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+          <div class="front">
+            <h3>🌟 'Aql (Intellect)</h3>
+            <p><em>Tap to learn more</em></p>
+          </div>
+          <div class="back">
+            <p>The <strong>'aql</strong> is the tool for reasoning. In Islam, intellect must work with revelation to find the best path.</p>
+          </div>
+        </div>
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+          <div class="front">
+            <h3>📜 Ibn Khaldun</h3>
+            <p><em>Tap to learn more</em></p>
+          </div>
+          <div class="back">
+            <p>A famous Muslim scholar who studied how <strong>groups and societies</strong> behave. He wrote about education and human nature.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section-card">
+      <h3>Self-Check: Match the Concept</h3>
+      <div class="quiz-box">
+        <p><strong>Which concept means the peaceful, content soul?</strong></p>
+        <div class="quiz-options">
+          <label><input type="radio" name="q2" value="wrong" onchange="checkQ2(this)"> Nafs Ammarah</label>
+          <label><input type="radio" name="q2" value="correct" onchange="checkQ2(this)"> Nafs Mutma'innah</label>
+          <label><input type="radio" name="q2" value="wrong" onchange="checkQ2(this)"> Qalb</label>
+        </div>
+        <div class="quiz-feedback" id="fb2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 3: Assessment -->
+  <div class="module" id="mod2">
+    <div class="section-card">
+      <h2>📝 Assessment</h2>
+      <p>Assessment helps us know <strong>what students have learned</strong>. There are many types. Explore them below.</p>
+      <div style="margin-top:1rem;">
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>🎯 Formative Assessment (During Learning)</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>These happen <strong>while</strong> teaching. They help the teacher adjust.</p>
+            <ul>
+              <li>Thumbs up / thumbs down check</li>
+              <li>Exit tickets (write one sentence)</li>
+              <li>Short quizzes with instant feedback</li>
+              <li>Observing group work</li>
+            </ul>
+          </div></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>🏁 Summative Assessment (After Learning)</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>These happen at the <strong>end</strong> of a unit. They measure overall understanding.</p>
+            <ul>
+              <li>Final exams</li>
+              <li>Projects and portfolios</li>
+              <li>Standardized tests</li>
+            </ul>
+          </div></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>✅ Authentic Assessment (Real-Life Tasks)</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>Students do a <strong>real</strong> task, not just answer multiple-choice questions.</p>
+            <ul>
+              <li>Presenting a Hajj brochure</li>
+              <li>Creating a video about wudu steps</li>
+              <li>Writing a letter of advice using Islamic values</li>
+            </ul>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-card">
+      <h3>Build a Simple Rubric</h3>
+      <p>Drag this rubric idea into your lesson. Click the criteria to see what each level means.</p>
+      <table style="width:100%; border-collapse:collapse; margin-top:0.8rem;">
+        <thead>
+          <tr style="background:var(--primary); color:white;">
+            <th style="padding:0.6rem; text-align:left;">Criteria</th>
+            <th style="padding:0.6rem;">Excellent (3)</th>
+            <th style="padding:0.6rem;">Good (2)</th>
+            <th style="padding:0.6rem;">Developing (1)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:#fafafa;">
+            <td style="padding:0.6rem; border-bottom:1px solid #eee;"><strong>Knowledge</strong></td>
+            <td style="padding:0.6rem; border-bottom:1px solid #eee;">Explains fully with examples</td>
+            <td style="padding:0.6rem; border-bottom:1px solid #eee;">Explains with some detail</td>
+            <td style="padding:0.6rem; border-bottom:1px solid #eee;">Basic idea only</td>
+          </tr>
+          <tr>
+            <td style="padding:0.6rem; border-bottom:1px solid #eee;"><strong>Language</strong></td>
+            <td style="padding:0.6rem; border-bottom:1px solid #eee;">Clear and correct English</td>
+            <td style="padding:0.6rem; border-bottom:1px solid #eee;">Some errors, still clear</td>
+            <td style="padding:0.6rem; border-bottom:1px solid #eee;">Hard to understand</td>
+          </tr>
+          <tr style="background:#fafafa;">
+            <td style="padding:0.6rem;"><strong>Presentation</strong></td>
+            <td style="padding:0.6rem;">Neat, organized, visuals</td>
+            <td style="padding:0.6rem;">Mostly neat</td>
+            <td style="padding:0.6rem;">Messy or incomplete</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="quiz-box" style="margin-top:1rem;">
+        <p><strong>Quick Check:</strong> A quiz given in the middle of a lesson to see if students understand is called:</p>
+        <div class="quiz-options">
+          <label><input type="radio" name="q3" value="correct" onchange="checkQ3(this)"> Formative assessment</label>
+          <label><input type="radio" name="q3" value="wrong" onchange="checkQ3(this)"> Summative assessment</label>
+          <label><input type="radio" name="q3" value="wrong" onchange="checkQ3(this)"> Authentic assessment</label>
+        </div>
+        <div class="quiz-feedback" id="fb3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODULE 4: Inimitability of Qur'an -->
+  <div class="module" id="mod3">
+    <div class="section-card">
+      <h2>📖 The Inimitability of the Qur'an (I'jaz)</h2>
+      <p>The Qur'an is <strong>miraculous</strong> and cannot be copied. Explore the four main types of its inimitability.</p>
+      <div style="margin-top:1rem;">
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>1. 🗣️ Linguistic & Literary I'jaz</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>The Qur'an uses Arabic in a way that is <strong>unique, beautiful, and impossible to match</strong>.</p>
+            <ul>
+              <li>Perfect rhythm and rhyme without losing meaning.</li>
+              <li>Words chosen with extreme precision.</li>
+              <li>Arabs at the time were masters of poetry, yet they could not produce one chapter like it.</li>
+            </ul>
+            <p><strong>Challenge:</strong> <em>"And if you are in doubt about what We have sent down upon Our Servant, then produce a chapter the like thereof…"</em> (2:23)</p>
+          </div></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>2. 🔬 Scientific I'jaz</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>The Qur'an contains facts that match modern science, revealed long before they were discovered.</p>
+            <div class="grid-2" style="margin-top:0.5rem;">
+              <div style="background:#f4f9f9; padding:0.8rem; border-radius:8px;">
+                <strong>Embryology</strong>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">Stages of human creation described in detail (23:14).</p>
+              </div>
+              <div style="background:#f4f9f9; padding:0.8rem; border-radius:8px;">
+                <strong>Universe</strong>
+                <p style="font-size:0.9rem; margin-top:0.3rem;">Expansion of the universe mentioned (51:47).</p>
+              </div>
+            </div>
+          </div></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>3. ⚖️ Legislative I'jaz</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>The laws in the Qur'an are <strong>just and balanced</strong> for all times.</p>
+            <ul>
+              <li>Family law protects women, orphans, and the weak.</li>
+              <li>Economic rules forbid exploitation and interest (riba).</li>
+              <li>Criminal law aims at justice, not revenge.</li>
+            </ul>
+          </div></div>
+        </div>
+        <div class="accordion">
+          <div class="accordion-header" onclick="toggle(this)">
+            <span>4. 🔮 Prophetic I'jaz</span>
+            <span class="accordion-icon">▼</span>
+          </div>
+          <div class="accordion-body"><div class="content">
+            <p>The Qur'an tells about <strong>future events</strong> that came true.</p>
+            <ul>
+              <li>Victory of the Romans over Persians after defeat (30:2-4).</li>
+              <li>Preservation of the Qur'an itself for all time.</li>
+            </ul>
+          </div></div>
+        </div>
+      </div>
+    </div>
+    <div class="section-card">
+      <h3>Quick Quiz: I'jaz Types</h3>
+      <div class="quiz-box">
+        <p><strong>Which type of I'jaz talks about perfect Arabic style and challenge to humanity?</strong></p>
+        <div class="quiz-options">
+          <label><input type="radio" name="q4" value="correct" onchange="checkQ4(this)"> Linguistic & Literary</label>
+          <label><input type="radio" name="q4" value="wrong" onchange="checkQ4(this)"> Scientific</label>
+          <label><input type="radio" name="q4" value="wrong" onchange="checkQ4(this)"> Legislative</label>
+        </div>
+        <div class="quiz-feedback" id="fb4"></div>
+      </div>
+      <div class="quiz-box">
+        <p><strong>Which type includes rules about family and money?</strong></p>
+        <div class="quiz-options">
+          <label><input type="radio" name="q5" value="wrong" onchange="checkQ5(this)"> Prophetic</label>
+          <label><input type="radio" name="q5" value="correct" onchange="checkQ5(this)"> Legislative</label>
+          <label><input type="radio" name="q5" value="wrong" onchange="checkQ5(this)"> Linguistic</label>
+        </div>
+        <div class="quiz-feedback" id="fb5"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Created for Islamic Studies Classes | IIUM School</p>
+  <p>Lower Proficiency Support • Interactive Learning</p>
+</footer>
+
+<script>
+  function showModule(index) {
+    document.querySelectorAll('.module').forEach((m, i) => m.classList.toggle('active', i === index));
+    document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === index));
+  }
+  function toggle(header) {
+    header.parentElement.classList.toggle('open');
+  }
+  function updateProgress(id) {
+    const total = document.querySelectorAll('#'+id.replace('prog','a')).length;
+    const checked = document.querySelectorAll('input:checked').length; // simplified
+    // Since checkboxes share page, use a scoped count per module
+    let group = 'a';
+    if(id==='prog1') {
+      const boxes = [document.getElementById('a1'),document.getElementById('a2'),document.getElementById('a3'),document.getElementById('a4')];
+      const c = boxes.filter(x=>x.checked).length;
+      document.getElementById('prog1').style.width = (c/4*100)+'%';
+    }
+  }
+  function showFeedback(el, id, correct) {
+    const fb = document.getElementById(id);
+    fb.style.display = 'block';
+    if(correct) { fb.className = 'quiz-feedback correct'; fb.textContent = '✅ Correct! Great job.'; }
+    else { fb.className = 'quiz-feedback wrong'; fb.textContent = '❌ Not quite. Read again and try!'; }
+  }
+  function checkQ1(radio) { showFeedback(radio, 'fb1', radio.value==='correct'); }
+  function checkQ2(radio) { showFeedback(radio, 'fb2', radio.value==='correct'); }
+  function checkQ3(radio) { showFeedback(radio, 'fb3', radio.value==='correct'); }
+  function checkQ4(radio) { showFeedback(radio, 'fb4', radio.value==='correct'); }
+  function checkQ5(radio) { showFeedback(radio, 'fb5', radio.value==='correct'); }
+</script>
+</body>
+</html>
