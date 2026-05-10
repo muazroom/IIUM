@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADDIE Design Phase Notes</title>
+  <style>
+    :root {
+      --bg: #f6f2ec;
+      --surface: #fffdfa;
+      --surface-2: #f8f4ee;
+      --border: #ddd4c8;
+      --text: #25221d;
+      --muted: #6f675d;
+      --primary: #235b4a;
+      --secondary: #325f86;
+      --accent: #7a538f;
+      --shadow: 0 18px 40px rgba(29, 25, 20, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+      --content: 1240px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #171513;
+      --surface: #211d1a;
+      --surface-2: #2b2622;
+      --border: #3b3530;
+      --text: #f3eee5;
+      --muted: #b8aea0;
+      --primary: #67b692;
+      --secondary: #82b3de;
+      --accent: #be9ae1;
+      --shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, color-mix(in srgb, var(--bg) 85%, white) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: color-mix(in srgb, var(--bg) 84%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+    }
+
+    .topbar-inner {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      box-shadow: var(--shadow);
+      flex-shrink: 0;
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-size: clamp(16px, 2.4vw, 20px);
+      line-height: 1.15;
+    }
+
+    .brand-copy p {
+      margin: 2px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 20px 18px 48px;
+    }
+
+    .hero {
+      background: radial-gradient(circle at top right, color-mix(in srgb, var(--primary) 12%, transparent), transparent 40%), var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: clamp(22px, 4vw, 36px);
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--primary) 9%, var(--surface-2));
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .hero h2 {
+      margin: 0 0 10px;
+      font-size: clamp(30px, 5vw, 48px);
+      line-height: 1.05;
+      max-width: 12ch;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 72ch;
+      color: var(--muted);
+      font-size: clamp(15px, 2.2vw, 18px);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .summary-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+    }
+
+    .summary-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .notes {
+      display: grid;
+      gap: 22px;
+    }
+
+    .section-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      scroll-margin-top: 90px;
+    }
+
+    .section-head {
+      padding: 22px 22px 18px;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 72%, white), var(--surface));
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .section-kicker {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-head h3 {
+      margin: 0 0 6px;
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.1;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 70ch;
+    }
+
+    .section-no {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .section-body {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      background: var(--surface-2);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .panel.plan { background: color-mix(in srgb, var(--primary) 7%, var(--surface)); }
+    .panel.process { background: color-mix(in srgb, var(--secondary) 7%, var(--surface)); }
+    .panel.consider { background: color-mix(in srgb, var(--accent) 7%, var(--surface)); }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid color-mix(in srgb, var(--border) 72%, transparent);
+    }
+
+    .icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .plan .icon { background: var(--primary); }
+    .process .icon { background: var(--secondary); }
+    .consider .icon { background: var(--accent); }
+
+    .panel-head h4 {
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .plan .panel-head h4 { color: var(--primary); }
+    .process .panel-head h4 { color: var(--secondary); }
+    .consider .panel-head h4 { color: var(--accent); }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .panel li {
+      font-size: 14px;
+      color: color-mix(in srgb, var(--text) 92%, var(--muted));
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .quick-nav {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      max-width: min(420px, calc(100vw - 36px));
+    }
+
+    .quick-nav a {
+      text-decoration: none;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 12px;
+      font-size: 13px;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 980px) {
+      .summary-grid,
+      .section-body {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar-inner,
+      .page {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .brand-copy p,
+      .actions .btn[href="#notes"] {
+        display: none;
+      }
+
+      .hero,
+      .section-card,
+      .summary-card,
+      .panel {
+        border-radius: 20px;
+      }
+
+      .section-head,
+      .section-body {
+        padding: 16px;
+      }
+
+      .panel {
+        padding: 15px;
+      }
+
+      .quick-nav {
+        left: 14px;
+        right: 14px;
+        bottom: 12px;
+        justify-content: center;
+      }
+
+      .quick-nav a {
+        flex: 1 1 auto;
+        text-align: center;
+      }
+    }
+
+    @media print {
+      .topbar, .quick-nav { display: none; }
+      body { background: white; }
+      .page { max-width: 100%; padding: 0; }
+      .section-card, .hero { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">D</div>
+        <div class="brand-copy">
+          <h1>ADDIE Design Phase</h1>
+          <p>Responsive notes in HTML format</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn" href="#notes">Jump to notes</a>
+        <button class="btn" type="button" id="themeToggle">Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <span class="eyebrow">Design phase notes</span>
+      <h2>From analysis into a teaching blueprint.</h2>
+      <p>The Design phase in ADDIE translates the findings from analysis into a structured plan for teaching and learning. It clarifies what will be taught, how it will be taught, how learning will be assessed, and what conditions must be considered before development begins.</p>
+      <div class="summary-grid">
+        <article class="summary-card">
+          <h3>What to plan</h3>
+          <p>Outcomes, content structure, teaching strategies, assessments, delivery mode, resources, and technology.</p>
+        </article>
+        <article class="summary-card">
+          <h3>How to design</h3>
+          <p>Move step by step from outcomes to learning journey, methods, media, assessment, and feedback.</p>
+        </article>
+        <article class="summary-card">
+          <h3>What to consider</h3>
+          <p>Learner needs, context, constraints, alignment, differentiation, accessibility, and evaluation from the start.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="notes" class="notes">
+      <article class="section-card" id="s1">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Section one</div>
+            <h3>What to plan and design</h3>
+            <p>Focus on building the blueprint for teaching and learning before any materials are produced.</p>
+          </div>
+          <div class="section-no">01</div>
+        </div>
+        <div class="section-body">
+          <section class="panel plan">
+            <div class="panel-head"><div class="icon">P</div><h4>Plan</h4></div>
+            <ul>
+              <li><strong>Learning outcomes/objectives:</strong> Write clear outcomes that are SMART and aligned with identified needs, philosophy, and curriculum aims.</li>
+              <li><strong>Content structure:</strong> Decide units, topics, sequence, and estimated time for each part of the module.</li>
+              <li><strong>Teaching–learning strategies:</strong> Choose suitable approaches such as lectures, discussions, cooperative learning, projects, and digital tools.</li>
+              <li><strong>Assessment plan:</strong> Plan formative and summative tasks, rubrics, and the link between each task and each objective.</li>
+              <li><strong>Delivery mode and resources:</strong> Decide whether delivery will be face-to-face, online, or blended, and identify required materials, media, and technology.</li>
+            </ul>
+          </section>
+          <section class="panel process">
+            <div class="panel-head"><div class="icon">M</div><h4>Meaning</h4></div>
+            <ul>
+              <li>This stage does not yet produce the actual worksheets, slides, or videos.</li>
+              <li>Instead, it creates the blueprint that guides later development.</li>
+              <li>A strong design phase prevents confusion, duplication, and weak alignment in later stages.</li>
+              <li>It also ensures that teaching decisions are intentional rather than improvised.</li>
+            </ul>
+          </section>
+          <section class="panel consider">
+            <div class="panel-head"><div class="icon">A</div><h4>Advice</h4></div>
+            <ul>
+              <li>Keep each planned item directly linked to the analysis findings.</li>
+              <li>Avoid overloading the blueprint with too many objectives or activities.</li>
+              <li>Think of the design phase as architectural planning: clear enough for others to build from it later.</li>
+            </ul>
+          </section>
+        </div>
+      </article>
+
+      <article class="section-card" id="s2">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Section two</div>
+            <h3>How to design</h3>
+            <p>Turn analysis results into a structured plan through a logical step-by-step design process.</p>
+          </div>
+          <div class="section-no">02</div>
+        </div>
+        <div class="section-body">
+          <section class="panel plan">
+            <div class="panel-head"><div class="icon">1</div><h4>Start from outcomes</h4></div>
+            <ul>
+              <li>Translate the needs identified in the analysis phase into clear learning outcomes for each unit and lesson.</li>
+              <li>Make sure each outcome states what learners should know, do, or demonstrate by the end of instruction.</li>
+              <li>Check that the outcomes reflect both curriculum requirements and broader educational philosophy.</li>
+            </ul>
+          </section>
+          <section class="panel process">
+            <div class="panel-head"><div class="icon">2</div><h4>Map learning journey</h4></div>
+            <ul>
+              <li>Design a sequence of lessons and activities that move from simple to complex and from guided to more independent learning.</li>
+              <li>Outline or storyboard the learning flow so each lesson builds logically on the previous one.</li>
+              <li>Plan where prior knowledge will be activated, where new ideas will be introduced, and where application will happen.</li>
+            </ul>
+          </section>
+          <section class="panel consider">
+            <div class="panel-head"><div class="icon">3</div><h4>Choose methods, media, and assessment</h4></div>
+            <ul>
+              <li>Match teaching strategies and media to each outcome and learner profile.</li>
+              <li>Plan how learners will demonstrate learning through tasks, performances, reflections, or tests.</li>
+              <li>Decide how and when feedback will be given at each stage of the learning process.</li>
+            </ul>
+          </section>
+        </div>
+      </article>
+
+      <article class="section-card" id="s3">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Section three</div>
+            <h3>What to take into consideration</h3>
+            <p>Good design is not only about ideas; it must also respond to real learners, context, and future evaluation.</p>
+          </div>
+          <div class="section-no">03</div>
+        </div>
+        <div class="section-body">
+          <section class="panel plan">
+            <div class="panel-head"><div class="icon">L</div><h4>Learners and context</h4></div>
+            <ul>
+              <li><strong>Learner characteristics:</strong> language level, prior knowledge, motivation, learning preferences, and special educational needs.</li>
+              <li><strong>Context and constraints:</strong> timetable, class size, facilities, technology access, and teacher workload.</li>
+              <li>The design must remain realistic within the actual school context.</li>
+            </ul>
+          </section>
+          <section class="panel process">
+            <div class="panel-head"><div class="icon">A</div><h4>Alignment and accessibility</h4></div>
+            <ul>
+              <li><strong>Alignment:</strong> Ensure coherence with national curriculum, school vision, Islamic values, and the needs statement.</li>
+              <li><strong>Accessibility and differentiation:</strong> Plan support for weaker learners and extension for stronger learners.</li>
+              <li>Use varied activities, clear instructions, and multiple ways for learners to participate and demonstrate understanding.</li>
+            </ul>
+          </section>
+          <section class="panel consider">
+            <div class="panel-head"><div class="icon">E</div><h4>Evaluation from the start</h4></div>
+            <ul>
+              <li>Think early about how the design will be checked during and after implementation.</li>
+              <li>Plan data sources such as student work, assessment results, teacher reflection, and student voice.</li>
+              <li>This makes the design phase more iterative and prepares the way for evaluation and revision.</li>
+            </ul>
+          </section>
+        </div>
+      </article>
+    </section>
+
+    <p class="footer-note">ADDIE Design Phase — responsive HTML notes for reading on phone, tablet, or desktop.</p>
+  </main>
+
+  <nav class="quick-nav" aria-label="Quick section navigation">
+    <a href="#s1">Plan</a>
+    <a href="#s2">Process</a>
+    <a href="#s3">Consider</a>
+  </nav>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    toggle.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+    });
+  </script>
+</body>
+</html>
