@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ADDIE Analysis Phase</title>
+<style>
+  @page { size: A4 landscape; margin: 1.2cm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; }
+
+  .page {
+    width: 277mm;
+    height: 185mm;
+    background: #ffffff;
+    margin: 0 auto 12px auto;
+    padding: 16px 22px;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+    border-left: 5px solid #2c5f2e;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #2c5f2e;
+  }
+
+  .component-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ffffff;
+    background: #2c5f2e;
+    padding: 3px 10px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .addie-tag {
+    font-size: 11px;
+    color: #555;
+    font-weight: 600;
+  }
+
+  .title-area {
+    margin-bottom: 10px;
+  }
+
+  .component-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #1a1a2e;
+    margin-bottom: 3px;
+    letter-spacing: -0.3px;
+  }
+
+  .component-subtitle {
+    font-size: 13px;
+    color: #444;
+    font-style: italic;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .col {
+    background: #f8f9fa;
+    border-radius: 6px;
+    padding: 14px 16px;
+    border-top: 5px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .col.how { border-top-color: #2c5f2e; background: #f4f9f4; }
+  .col.methods { border-top-color: #1a5276; background: #f4f7fb; }
+  .col.significance { border-top-color: #7d3c98; background: #f9f5fb; }
+
+  .col-heading {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+
+  .col-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #fff;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+
+  .col.how .col-heading { color: #2c5f2e; }
+  .col.methods .col-heading { color: #1a5276; }
+  .col.significance .col-heading { color: #7d3c98; }
+
+  .col.how .col-icon { background: #2c5f2e; }
+  .col.methods .col-icon { background: #1a5276; }
+  .col.significance .col-icon { background: #7d3c98; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  ul li {
+    font-size: 12.5px;
+    color: #222;
+    line-height: 1.5;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+
+  .col.how li::before { background: #2c5f2e; }
+  .col.methods li::before { background: #1a5276; }
+  .col.significance li::before { background: #7d3c98; }
+
+  .page-footer {
+    margin-top: 10px;
+    font-size: 10px;
+    color: #777;
+    text-align: right;
+    font-style: italic;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; height: 185mm; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1: LEARNER -->
+<div class="page">
+  <div class="page-header">
+    <span class="component-tag">Component 1 of 9</span>
+    <span class="addie-tag">ADDIE — Analysis Phase</span>
+  </div>
+  <div class="title-area">
+    <div class="component-title">Learner</div>
+    <div class="component-subtitle">Age, grade, language, prior Islamic knowledge, learning difficulties and strengths</div>
+  </div>
+  <div class="three-col">
+    <div class="col how">
+      <div class="col-heading"><span class="col-icon">H</span>How to Analyse</div>
+      <ul>
+        <li>Identify learner characteristics: age, grade, linguistic background, and prior Islamic knowledge.</li>
+        <li>Identify learning difficulties, misconceptions, and academic strengths.</li>
+        <li>Analyse current achievement through exam results, class tests, and in-class performance records.</li>
+        <li>Explore motivation, interest, and attitudes towards Islamic Education and the language of instruction.</li>
+        <li>Assess learners' proficiency in English or the instructional medium used in class.</li>
+      </ul>
+    </div>
+    <div class="col methods">
+      <div class="col-heading"><span class="col-icon">M</span>Methods</div>
+      <ul>
+        <li>Review exam results, school records, and previous assessments for patterns of achievement.</li>
+        <li>Administer student questionnaires on interest, perceived difficulty, relevance, and preferred activities.</li>
+        <li>Conduct short diagnostic tests on key topics such as Seerah, Fiqh basics, and Quranic understanding.</li>
+        <li>Carry out classroom observations focused on engagement, participation, and language use.</li>
+        <li>Hold informal conversations or short focus groups with students about their learning experience.</li>
+      </ul>
+    </div>
+    <div class="col significance">
+      <div class="col-heading"><span class="col-icon">S</span>Significance</div>
+      <ul>
+        <li>Places the learner at the centre of all curriculum and module design decisions.</li>
+        <li>Ensures learning outcomes, content difficulty, language level, and strategies match real learners.</li>
+        <li>Prevents designing for an imagined "average" student rather than the actual cohort.</li>
+        <li>Aligns language level and teaching strategies with the students' true proficiency.</li>
+        <li>If neglected, the curriculum may be theoretically sound but practically unsuitable in the classroom.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">ADDIE Analysis Phase — Curriculum and Module Design in Islamic Education</div>
+</div>
+
+<!-- PAGE 2: TEACHER -->
+<div class="page">
+  <div class="page-header">
+    <span class="component-tag">Component 2 of 9</span>
+    <span class="addie-tag">ADDIE — Analysis Phase</span>
+  </div>
+  <div class="title-area">
+    <div class="component-title">Teacher</div>
+    <div class="component-subtitle">Qualifications, content knowledge, pedagogy, language, assessment literacy, ICT, and development needs</div>
+  </div>
+  <div class="three-col">
+    <div class="col how">
+      <div class="col-heading"><span class="col-icon">H</span>How to Analyse</div>
+      <ul>
+        <li>Review professional qualifications, teaching experience, and training history in Islamic Education.</li>
+        <li>Assess content knowledge in Qur'an, Hadith, Fiqh, Sirah, and Akhlaq relevant to the curriculum level.</li>
+        <li>Evaluate use of student-centred pedagogy, questioning, group work, and formative assessment.</li>
+        <li>Assess language proficiency and ability to scaffold content for multilingual learners.</li>
+        <li>Identify beliefs about curriculum aims, openness to change, and perceived barriers in teaching.</li>
+        <li>Determine professional development needs and preferred formats for capacity building.</li>
+      </ul>
+    </div>
+    <div class="col methods">
+      <div class="col-heading"><span class="col-icon">M</span>Methods</div>
+      <ul>
+        <li>Teacher needs-analysis questionnaire covering content confidence, strategies, ICT use, and support needs.</li>
+        <li>Semi-structured interviews with Islamic Education teachers and heads of department.</li>
+        <li>Classroom observations using a structured checklist on activities, questioning, and engagement.</li>
+        <li>Document review of lesson plans, teaching slides, worksheets, and assessments prepared by teachers.</li>
+        <li>Short reflective prompts or informal conversations about daily teaching challenges and successes.</li>
+      </ul>
+    </div>
+    <div class="col significance">
+      <div class="col-heading"><span class="col-icon">S</span>Significance</div>
+      <ul>
+        <li>Teachers are the primary implementers; their capacity shapes what students actually experience.</li>
+        <li>Prevents designing strategies or materials that teachers cannot realistically deliver.</li>
+        <li>Identifies training, mentoring, and resources that must accompany the new module.</li>
+        <li>Reveals the gap between intended curriculum design and actual classroom practice.</li>
+        <li>Ensures consistent and faithful implementation across different classes and teachers.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">ADDIE Analysis Phase — Curriculum and Module Design in Islamic Education</div>
+</div>
+
+<!-- PAGE 3: STAKEHOLDERS -->
+<div class="page">
+  <div class="page-header">
+    <span class="component-tag">Component 3 of 9</span>
+    <span class="addie-tag">ADDIE — Analysis Phase</span>
+  </div>
+  <div class="title-area">
+    <div class="component-title">Stakeholders' Needs and Expectations</div>
+    <div class="component-subtitle">Teachers, parents, school leaders, community figures, and alumni</div>
+  </div>
+  <div class="three-col">
+    <div class="col how">
+      <div class="col-heading"><span class="col-icon">H</span>How to Analyse</div>
+      <ul>
+        <li>Clarify what each stakeholder group expects from Islamic Education: knowledge, character, exam results, identity, and life skills.</li>
+        <li>Identify perceived strengths and weaknesses of the existing curriculum from their perspectives.</li>
+        <li>Explore hopes, worries, and suggestions for improvement from different groups.</li>
+        <li>Compare expectations across groups to identify consensus, tensions, or competing priorities.</li>
+        <li>Assess how much support or resistance a new curriculum approach might receive from each group.</li>
+      </ul>
+    </div>
+    <div class="col methods">
+      <div class="col-heading"><span class="col-icon">M</span>Methods</div>
+      <ul>
+        <li>Semi-structured interviews with school leaders and heads of Islamic Education on strategic aims.</li>
+        <li>Focus group discussions or individual interviews with Islamic Education teachers.</li>
+        <li>Parent questionnaires or small focus groups conducted during school events or online.</li>
+        <li>Consultation with community or religious leaders such as mosque committees and local scholars.</li>
+        <li>Conversations with alumni about how useful their school Islamic Education was after graduation.</li>
+      </ul>
+    </div>
+    <div class="col significance">
+      <div class="col-heading"><span class="col-icon">S</span>Significance</div>
+      <ul>
+        <li>Ensures the curriculum is socially legitimate and supported by the school and wider community.</li>
+        <li>Captures strong parental and community expectations about values, identity, and character formation.</li>
+        <li>Prevents resistance or low uptake of a well-designed module that stakeholders do not trust or want.</li>
+        <li>Strengthens the credibility and ummah-responsiveness of the curriculum research and design.</li>
+        <li>Builds ownership and cooperation before implementation begins.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">ADDIE Analysis Phase — Curriculum and Module Design in Islamic Education</div>
+</div>
+
+<!-- PAGE 4: FACILITIES -->
+<div class="page">
+  <div class="page-header">
+    <span class="component-tag">Component 4 of 9</span>
+    <span class="addie-tag">ADDIE — Analysis Phase</span>
+  </div>
+  <div class="title-area">
+    <div class="component-title">Facilities</div>
+    <div class="component-subtitle">Classrooms, library, school compound, internet access, and technology</div>
+  </div>
+  <div class="three-col">
+    <div class="col how">
+      <div class="col-heading"><span class="col-icon">H</span>How to Analyse</div>
+      <ul>
+        <li>Map all available physical spaces: classrooms, prayer rooms, library, outdoor areas, and multi-purpose halls.</li>
+        <li>Evaluate digital resources: projectors, computers, tablets, internet stability, and learning platforms.</li>
+        <li>Assess the condition, accessibility, and reliability of each facility for regular teaching use.</li>
+        <li>Relate facilities to potential teaching methods such as ICT-based tasks, outdoor projects, or group work.</li>
+        <li>Identify equity issues: whether all students have equal access to devices or internet outside school.</li>
+      </ul>
+    </div>
+    <div class="col methods">
+      <div class="col-heading"><span class="col-icon">M</span>Methods</div>
+      <ul>
+        <li>Conduct a facilities audit or walkthrough of the school using a structured checklist.</li>
+        <li>Discuss access rules, maintenance schedules, and timetabling with administration and ICT staff.</li>
+        <li>Review library catalogues, digital subscriptions, and existing online learning platforms.</li>
+        <li>Observe how current facilities are used during Islamic Education lessons in real time.</li>
+        <li>Survey teachers on which facilities they actually use, which are broken, and which they need.</li>
+      </ul>
+    </div>
+    <div class="col significance">
+      <div class="col-heading"><span class="col-icon">S</span>Significance</div>
+      <ul>
+        <li>Defines the realistic boundaries of what learning activities and methods can be planned.</li>
+        <li>Prevents designing modules that depend on unavailable or unreliable technology or spaces.</li>
+        <li>Supports the selection of ambitious yet feasible instructional strategies in the Design phase.</li>
+        <li>Helps maximise learning impact within the infrastructure that actually exists.</li>
+        <li>Guides budget and resource requests where gaps are identified.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">ADDIE Analysis Phase — Curriculum and Module Design in Islamic Education</div>
+</div>
+
+<!-- PAGE 5: CURRICULUM -->
+<div class="page">
+  <div class="page-header">
+    <span class="component-tag">Component 5 of 9</span>
+    <span class="addie-tag">ADDIE — Analysis Phase</span>
+  </div>
+  <div class="title-area">
+    <div class="component-title">Curriculum</div>
+    <div class="component-subtitle">Existing materials, textbooks, lesson plans, schemes of work, and assessments</div>
+  </div>
+  <div class="three-col">
+    <div class="col how">
+      <div class="col-heading"><span class="col-icon">H</span>How to Analyse</div>
+      <ul>
+        <li>Examine current aims, learning outcomes, and topic coverage in the Islamic Education syllabus.</li>
+        <li>Analyse textbooks and teacher-made materials for content balance, language level, and relevance to students' lives.</li>
+        <li>Review lesson plans and schemes of work to see how content is sequenced and taught week by week.</li>
+        <li>Evaluate assessment tools for alignment with outcomes, weighting, and cognitive demand.</li>
+        <li>Benchmark the current curriculum against selected comparator curricula from other countries or schools.</li>
+      </ul>
+    </div>
+    <div class="col methods">
+      <div class="col-heading"><span class="col-icon">M</span>Methods</div>
+      <ul>
+        <li>Document analysis of national curriculum standards, school syllabi, and schemes of work.</li>
+        <li>Content analysis of textbooks and student materials using a structured coding framework.</li>
+        <li>Review of lesson plans, teaching slides, worksheets, and in-class activities.</li>
+        <li>Analysis of exam papers and other assessments: weightage, question types, and Bloom's levels.</li>
+        <li>Curriculum mapping grid across selected comparator curricula to identify similarities and gaps.</li>
+      </ul>
+    </div>
+    <div class="col significance">
+      <div class="col-heading"><span class="col-icon">S</span>Significance</div>
+      <ul>
+        <li>Identifies what is already strong and should be retained in the redesigned module.</li>
+        <li>Pinpoints real gaps such as weak application, outdated examples, or low higher-order thinking.</li>
+        <li>Prevents unnecessary replacement of effective elements and wasteful duplication.</li>
+        <li>Links directly to comparative analysis to show where improvement is most needed.</li>
+        <li>Provides concrete evidence for why the new module must take a different direction.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">ADDIE Analysis Phase — Curriculum and Module Design in Islamic Education</div>
+</div>
+
+<!-- PAGE 6: CONSTRAINTS -->
+<div class="page">
+  <div class="page-header">
+    <span class="component-tag">Component 6 of 9</span>
+    <span class="addie-tag">ADDIE — Analysis Phase</span>
+  </div>
+  <div class="title-area">
+    <div class="component-title">Constraints</div>
+    <div class="component-subtitle">Financial, time, policy, and human resource limitations</div>
+  </div>
+  <div class="three-col">
+    <div class="col how">
+      <div class="col-heading"><span class="col-icon">H</span>How to Analyse</div>
+      <ul>
+        <li>Determine the actual teaching time available: periods per week, number of weeks, and exam interruptions.</li>
+        <li>Identify budget limitations for books, printing, digital tools, excursions, and guest speakers.</li>
+        <li>Map policy constraints including national exam requirements, compulsory topics, and school rules.</li>
+        <li>Note human resource constraints: number of qualified Islamic Education teachers and support staff.</li>
+        <li>Assess whether the school calendar, co-curricular demands, and external exams reduce effective time.</li>
+      </ul>
+    </div>
+    <div class="col methods">
+      <div class="col-heading"><span class="col-icon">M</span>Methods</div>
+      <ul>
+        <li>Review school timetables, academic calendars, and term schedules in detail.</li>
+        <li>Analyse budget documents and administrative reports on resource allocation.</li>
+        <li>Interview principals or heads of department about financial and staffing realities.</li>
+        <li>Review official policy documents, examination regulations, and Ministry directives.</li>
+        <li>Map the teaching load of each Islamic Education teacher across classes and levels.</li>
+      </ul>
+    </div>
+    <div class="col significance">
+      <div class="col-heading"><span class="col-icon">S</span>Significance</div>
+      <ul>
+        <li>Sets the realistic scope and depth for every decision in the Design phase.</li>
+        <li>Prevents the creation of excellent but unimplementable curriculum designs.</li>
+        <li>Demonstrates to examiners and reviewers that the design is grounded and sustainable.</li>
+        <li>Ensures learning outcomes and activities are calibrated to real teaching time.</li>
+        <li>Highlights where advocacy or resource requests may be needed before implementation.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">ADDIE Analysis Phase — Curriculum and Module Design in Islamic Education</div>
+</div>
+
+<!-- PAGE 7: GLOBAL & SOCIETAL -->
+<div class="page">
+  <div class="page-header">
+    <span class="component-tag">Component 7 of 9</span>
+    <span class="addie-tag">ADDIE — Analysis Phase</span>
+  </div>
+  <div class="title-area">
+    <div class="component-title">Global and Societal Changes</div>
+    <div class="component-subtitle">Digitalisation, globalisation, pluralism, secular influences, and moral challenges</div>
+  </div>
+  <div class="three-col">
+    <div class="col how">
+      <div class="col-heading"><span class="col-icon">H</span>How to Analyse</div>
+      <ul>
+        <li>Identify major global trends affecting Muslim youth: digital media, globalisation, pluralism, and secularism.</li>
+        <li>Review how these trends are discussed in current Islamic education literature and policy documents.</li>
+        <li>Consider new learning needs created by these changes: digital ethics, media literacy, and interfaith skills.</li>
+        <li>Examine whether the current curriculum content reflects, ignores, or contradicts these realities.</li>
+        <li>Assess the gap between what students face in society and what the curriculum prepares them for.</li>
+      </ul>
+    </div>
+    <div class="col methods">
+      <div class="col-heading"><span class="col-icon">M</span>Methods</div>
+      <ul>
+        <li>Systematic literature review on contemporary challenges facing Islamic Education globally.</li>
+        <li>Review of international reports and scholarly work on youth, religion, and social change.</li>
+        <li>Thematic analysis of how global issues appear, or are absent, in existing curriculum materials.</li>
+        <li>Analysis of news, social media trends, and youth behaviour studies in the national context.</li>
+        <li>Consultation with counsellors or pastoral staff on student issues linked to global trends.</li>
+      </ul>
+    </div>
+    <div class="col significance">
+      <div class="col-heading"><span class="col-icon">S</span>Significance</div>
+      <ul>
+        <li>Keeps the curriculum responsive to the lived realities of students rather than frozen in the past.</li>
+        <li>Justifies the inclusion of themes such as social media ethics and Islamic digital citizenship.</li>
+        <li>Positions Islamic Education as a living, adaptive subject relevant to contemporary life.</li>
+        <li>Strengthens the academic argument for reform by connecting it to documented global pressures.</li>
+        <li>Ensures graduates are prepared for moral and intellectual challenges beyond the classroom.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">ADDIE Analysis Phase — Curriculum and Module Design in Islamic Education</div>
+</div>
+
+<!-- PAGE 8: NATIONAL PHILOSOPHY -->
+<div class="page">
+  <div class="page-header">
+    <span class="component-tag">Component 8 of 9</span>
+    <span class="addie-tag">ADDIE — Analysis Phase</span>
+  </div>
+  <div class="title-area">
+    <div class="component-title">National Philosophy and Educational Policy</div>
+    <div class="component-subtitle">Education philosophy, curriculum frameworks, and Islamic Education standards</div>
+  </div>
+  <div class="three-col">
+    <div class="col how">
+      <div class="col-heading"><span class="col-icon">H</span>How to Analyse</div>
+      <ul>
+        <li>Study the national education philosophy and specific policy documents related to Islamic Education.</li>
+        <li>Identify key concepts and phrases such as holistic, balanced, integrated, and 21st-century skills.</li>
+        <li>Map how far the current curriculum and classroom practice embody these stated ideals.</li>
+        <li>Identify misalignments between policy ambitions and what is actually taught and assessed.</li>
+        <li>Examine recent curriculum reform documents and competency frameworks for Islamic Education.</li>
+      </ul>
+    </div>
+    <div class="col methods">
+      <div class="col-heading"><span class="col-icon">M</span>Methods</div>
+      <ul>
+        <li>Document analysis of national philosophy statements and curriculum frameworks.</li>
+        <li>Mapping of policy aims against current curriculum content, outcomes, and assessments.</li>
+        <li>Interviews with school leaders about how they interpret and operationalise national policy.</li>
+        <li>Review of Ministry circulars, examination specifications, and competency standards.</li>
+        <li>Comparison of stated national graduate profiles with current module learning outcomes.</li>
+      </ul>
+    </div>
+    <div class="col significance">
+      <div class="col-heading"><span class="col-icon">S</span>Significance</div>
+      <ul>
+        <li>Aligns the redesigned module with officially stated national aims and directives.</li>
+        <li>Strengthens the policy legitimacy and institutional acceptability of the curriculum design.</li>
+        <li>Demonstrates that the design responds to national goals, not only local preferences.</li>
+        <li>Provides a framework for justifying competency-based and values-integrated content.</li>
+        <li>Reduces the risk of non-approval or marginalisation within the school system.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">ADDIE Analysis Phase — Curriculum and Module Design in Islamic Education</div>
+</div>
+
+<!-- PAGE 9: UMMAH / COMMUNITY -->
+<div class="page">
+  <div class="page-header">
+    <span class="component-tag">Component 9 of 9</span>
+    <span class="addie-tag">ADDIE — Analysis Phase</span>
+  </div>
+  <div class="title-area">
+    <div class="component-title">Industry, Societal & Ummah Needs · Community & Institutional Context</div>
+    <div class="component-subtitle">Graduate profiles, societal contribution, school ethos, and community realities</div>
+  </div>
+  <div class="three-col">
+    <div class="col how">
+      <div class="col-heading"><span class="col-icon">H</span>How to Analyse</div>
+      <ul>
+        <li>Clarify knowledge, skills, and dispositions needed for meaningful contribution to society and the ummah.</li>
+        <li>Consider expectations from higher education and the job market regarding Islamic values and generic skills.</li>
+        <li>Examine community and ummah-level discourses on what is lacking in current Muslim youth.</li>
+        <li>Understand the school community: socio-economic background, religious practices, diversity, and local issues.</li>
+        <li>Analyse school mission, ethos, discipline culture, and how Islamic Education is positioned institutionally.</li>
+      </ul>
+    </div>
+    <div class="col methods">
+      <div class="col-heading"><span class="col-icon">M</span>Methods</div>
+      <ul>
+        <li>Literature review on Islamic Education aims, desired graduate profiles, and youth development.</li>
+        <li>Consultation with community leaders, employers, or higher-education representatives on graduate attributes.</li>
+        <li>Analysis of national development plans and Islamic organisations' mission statements.</li>
+        <li>Review of school vision, mission, strategic plans, and promotional materials.</li>
+        <li>Interviews with school leaders and observation of school culture including assemblies and events.</li>
+        <li>Informal conversations with teachers and parents about community character and expectations.</li>
+      </ul>
+    </div>
+    <div class="col significance">
+      <div class="col-heading"><span class="col-icon">S</span>Significance</div>
+      <ul>
+        <li>Connects school Islamic Education to life beyond school and to the needs of the wider ummah.</li>
+        <li>Supports the inclusion of critical thinking, communication, and ethical decision-making.</li>
+        <li>Positions the module strategically within the school mission and community ecosystem.</li>
+        <li>Shows how the curriculum can reinforce strong community support or compensate where it is weak.</li>
+        <li>Strengthens the case for a holistic, future-oriented Islamic Education curriculum.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="page-footer">ADDIE Analysis Phase — Curriculum and Module Design in Islamic Education</div>
+</div>
+
+</body>
+</html>
