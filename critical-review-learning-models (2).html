@@ -1,0 +1,2063 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Critical Review of Models of Learning: The Development of Integrated Islamic Personality</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =================== DESIGN TOKENS =================== */
+:root, [data-theme="light"] {
+  --color-bg: #f9f7f2;
+  --color-surface: #fefcf8;
+  --color-surface-2: #ffffff;
+  --color-surface-offset: #f2ede4;
+  --color-surface-dynamic: #e8e0d5;
+  --color-divider: #d9d2c6;
+  --color-border: #cec6b8;
+  --color-text: #231f18;
+  --color-text-muted: #6b6457;
+  --color-text-faint: #a89e91;
+  --color-text-inverse: #fefcf8;
+  --color-primary: #1a5c4a;
+  --color-primary-hover: #134535;
+  --color-primary-active: #0d3025;
+  --color-primary-light: #e8f2ee;
+  --color-primary-highlight: #c8ddd7;
+  --color-gold: #c8860a;
+  --color-gold-light: #fdf3e0;
+  --color-gold-highlight: #f5d99a;
+  --color-accent2: #7b3f1e;
+  --color-accent2-light: #faf0ea;
+  --color-blue: #1a4f7a;
+  --color-blue-light: #e8f0f8;
+  --color-purple: #5c2d8a;
+  --color-purple-light: #f0e8f8;
+  --color-error: #a02020;
+  --color-error-light: #fce8e8;
+  --color-success: #286b3a;
+  --color-success-light: #e8f5ec;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 3px oklch(0.2 0.02 60 / 0.08);
+  --shadow-md: 0 4px 14px oklch(0.2 0.02 60 / 0.1);
+  --shadow-lg: 0 12px 36px oklch(0.2 0.02 60 / 0.14);
+  --transition: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-arabic: 'Amiri', 'Times New Roman', serif;
+  --text-xs: clamp(0.9rem, 0.82rem + 0.3vw, 1rem);
+  --text-sm: clamp(1.05rem, 0.95rem + 0.4vw, 1.18rem);
+  --text-base: clamp(1.18rem, 1.05rem + 0.35vw, 1.35rem);
+  --text-lg: clamp(1.35rem, 1.15rem + 0.9vw, 1.8rem);
+  --text-xl: clamp(1.9rem, 1.5rem + 1.5vw, 2.8rem);
+  --text-2xl: clamp(2.4rem, 1.6rem + 2.7vw, 3.6rem);
+}
+[data-theme="dark"] {
+  --color-bg: #16140f;
+  --color-surface: #1c1a14;
+  --color-surface-2: #22201a;
+  --color-surface-offset: #1a1813;
+  --color-surface-dynamic: #2a2820;
+  --color-divider: #2e2c24;
+  --color-border: #3a3830;
+  --color-text: #e8e3d8;
+  --color-text-muted: #9a9488;
+  --color-text-faint: #5e5a52;
+  --color-text-inverse: #1c1a14;
+  --color-primary: #4db08a;
+  --color-primary-hover: #3a9a76;
+  --color-primary-active: #2e7f5e;
+  --color-primary-light: #1a2e26;
+  --color-primary-highlight: #243d34;
+  --color-gold: #d4960e;
+  --color-gold-light: #2a2210;
+  --color-gold-highlight: #4a3810;
+  --color-accent2: #c47840;
+  --color-accent2-light: #2a1c10;
+  --color-blue: #5090c8;
+  --color-blue-light: #10202e;
+  --color-purple: #9060cc;
+  --color-purple-light: #1e1028;
+  --color-error: #cc4444;
+  --color-error-light: #2a1010;
+  --color-success: #4aaa64;
+  --color-success-light: #10281a;
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.3);
+  --shadow-md: 0 4px 14px oklch(0 0 0 / 0.4);
+  --shadow-lg: 0 12px 36px oklch(0 0 0 / 0.5);
+}
+
+/* =================== BASE =================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.8;
+  min-height: 100dvh;
+  display: block;
+}
+img, svg { display: block; max-width: 100%; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.3; font-family: var(--font-body); }
+p { max-width: 72ch; text-wrap: pretty; }
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+button { cursor: pointer; background: none; border: none; font-family: inherit; font-size: inherit; color: inherit; }
+.arabic { font-family: var(--font-arabic); font-size: 1.3em; direction: rtl; line-height: 2; color: var(--color-primary); }
+
+/* =================== LAYOUT =================== */
+#sidebar {
+  width: 280px;
+  min-width: 280px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  z-index: 200;
+  transition: transform var(--transition);
+  transform: translateX(-100%);
+}
+#main-content {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  height: 100vh;
+  width: 100%;
+}
+.content-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem 5rem;
+}
+
+/* =================== SIDEBAR =================== */
+.sidebar-header {
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--color-divider);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.logo-mark {
+  width: 36px; height: 36px; flex-shrink: 0;
+}
+.sidebar-title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.sidebar-subtitle {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  margin-top: 0.1rem;
+}
+.sidebar-controls {
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--color-divider);
+}
+.btn-control {
+  flex: 1;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-offset);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition);
+  text-align: center;
+}
+.btn-control:hover { background: var(--color-primary-light); color: var(--color-primary); border-color: var(--color-primary-highlight); }
+.nav-sections { flex: 1; overflow-y: auto; padding: 0.75rem 0; }
+.nav-group-title {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  padding: 0.75rem 1.5rem 0.25rem;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.5rem;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+  border-left: 2px solid transparent;
+  position: relative;
+}
+.nav-item:hover { background: var(--color-surface-offset); color: var(--color-text); }
+.nav-item.active { color: var(--color-primary); border-left-color: var(--color-primary); background: var(--color-primary-light); font-weight: 600; }
+.nav-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.5; flex-shrink: 0; }
+.nav-item.active .nav-dot { opacity: 1; }
+.sidebar-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--color-divider); }
+.progress-bar-wrap { background: var(--color-surface-offset); border-radius: var(--radius-full); height: 4px; overflow: hidden; }
+.progress-bar { height: 100%; background: var(--color-primary); border-radius: var(--radius-full); transition: width 0.5s ease; width: 0%; }
+.progress-label { font-size: 0.65rem; color: var(--color-text-faint); margin-bottom: 0.35rem; display: flex; justify-content: space-between; }
+
+/* =================== TOP BAR =================== */
+#topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.9rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  box-shadow: var(--shadow-sm);
+}
+.breadcrumb { font-size: var(--text-sm); color: var(--color-text-muted); display: flex; align-items: center; gap: 0.4rem; justify-content: center; }
+.breadcrumb span { color: var(--color-text-faint); }
+.topbar-right { display: flex; align-items: center; gap: 0.75rem; position: absolute; right: 1.25rem; }
+.btn-theme {
+  width: 36px; height: 36px; border-radius: var(--radius-md);
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-text-muted);
+  transition: all var(--transition);
+}
+.btn-theme:hover { background: var(--color-primary-light); color: var(--color-primary); }
+.badge-level {
+  font-size: 0.65rem; font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  background: var(--color-gold-light);
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold-highlight);
+}
+
+/* =================== SECTIONS =================== */
+.section { scroll-margin-top: 5rem; }
+.section-divider { height: 1px; background: var(--color-divider); margin: 3rem 0; }
+
+/* =================== HERO =================== */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0d3d2d 100%);
+  border-radius: var(--radius-2xl);
+  padding: 3rem 3rem 2.5rem;
+  color: white;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+}
+.hero-khat {
+  font-family: var(--font-arabic);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  direction: rtl;
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+.hero-title {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+.hero-subtitle {
+  font-size: var(--text-sm);
+  color: rgba(255,255,255,0.75);
+  max-width: 55ch;
+  line-height: 1.6;
+}
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.hero-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.9);
+}
+
+/* =================== THEORY CARDS =================== */
+.theory-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition);
+}
+.theory-card:hover { box-shadow: var(--shadow-md); }
+.theory-card-header {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+.theory-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-lg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.theory-card-header h3 {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.1rem;
+}
+.theory-card-header p {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  max-width: none;
+}
+.theory-toggle {
+  margin-left: auto;
+  width: 28px; height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: all var(--transition);
+  font-size: 0.75rem;
+}
+.theory-card-header:hover .theory-toggle { background: var(--color-primary-light); color: var(--color-primary); }
+.theory-card.open .theory-toggle { transform: rotate(180deg); background: var(--color-primary-light); color: var(--color-primary); }
+.theory-body { display: none; padding: 0 1.5rem 1.5rem; border-top: 1px solid var(--color-divider); }
+.theory-card.open .theory-body { display: block; }
+.theory-body-inner { padding-top: 1.25rem; }
+
+/* =================== TABS =================== */
+.tab-nav {
+  display: flex;
+  gap: 0.25rem;
+  background: var(--color-surface-offset);
+  padding: 0.25rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.tab-btn:hover { color: var(--color-text); background: var(--color-surface-2); }
+.tab-btn.active {
+  background: var(--color-surface-2);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* =================== CONTENT ELEMENTS =================== */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin: 1rem 0; }
+.info-card {
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+}
+.info-card h5 { font-size: var(--text-xs); font-weight: 700; margin-bottom: 0.5rem; color: var(--color-primary); }
+.info-card p, .info-card li { font-size: var(--text-xs); color: var(--color-text-muted); max-width: none; line-height: 1.6; }
+.info-card ul { padding-left: 1rem; }
+.info-card li { margin-bottom: 0.2rem; }
+
+.callout {
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+  border-left: 3px solid;
+  font-size: var(--text-xs);
+}
+.callout-green { background: var(--color-primary-light); border-color: var(--color-primary); color: var(--color-primary); }
+.callout-gold { background: var(--color-gold-light); border-color: var(--color-gold); color: var(--color-gold); }
+.callout-blue { background: var(--color-blue-light); border-color: var(--color-blue); color: var(--color-blue); }
+.callout-red { background: var(--color-error-light); border-color: var(--color-error); color: var(--color-error); }
+.callout-brown { background: var(--color-accent2-light); border-color: var(--color-accent2); color: var(--color-accent2); }
+.callout strong { display: block; margin-bottom: 0.3rem; font-weight: 700; }
+.callout p { max-width: none; color: inherit; opacity: 0.9; }
+
+.key-concept-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-highlight);
+  margin: 0.15rem;
+}
+.tags-wrap { display: flex; flex-wrap: wrap; margin: 0.5rem 0; }
+
+.compare-table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: var(--text-xs); }
+.compare-table th { background: var(--color-surface-offset); font-weight: 700; padding: 0.6rem 0.75rem; text-align: left; border-bottom: 2px solid var(--color-primary); font-size: 0.7rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.compare-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--color-divider); vertical-align: top; color: var(--color-text-muted); line-height: 1.5; }
+.compare-table tr:hover td { background: var(--color-surface-offset); }
+.compare-table .col-theory { font-weight: 700; color: var(--color-text); }
+
+h2.section-heading {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-primary);
+  display: flex; align-items: center; gap: 0.6rem;
+  letter-spacing: -0.01em;
+}
+h2.section-heading .icon { font-size: 1.2em; }
+h3.sub-heading { font-size: var(--text-sm); font-weight: 700; color: var(--color-text); margin: 1.25rem 0 0.5rem; }
+.section-intro { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: 1.5rem; line-height: 1.7; }
+
+/* =================== DIAGRAM =================== */
+.diagram-container {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+.diagram-title { font-size: var(--text-xs); font-weight: 700; color: var(--color-text-muted); margin-bottom: 1rem; text-align: center; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Mindmap CSS */
+.mindmap { display: flex; flex-direction: column; align-items: center; gap: 0; }
+.mindmap-center {
+  background: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-xl);
+  padding: 0.75rem 1.5rem;
+  font-weight: 800;
+  font-size: var(--text-sm);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow-md);
+}
+.mindmap-branches { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.5rem; }
+.mindmap-branch {
+  background: var(--color-surface-offset);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 0.6rem 0.9rem;
+  font-size: var(--text-xs);
+  text-align: center;
+  position: relative;
+  cursor: default;
+  transition: all var(--transition);
+  max-width: 130px;
+}
+.mindmap-branch:hover { border-color: var(--color-primary); background: var(--color-primary-light); color: var(--color-primary); }
+.mindmap-branch .branch-label { font-weight: 700; font-size: 0.7rem; }
+.mindmap-branch .branch-sub { font-size: 0.62rem; color: var(--color-text-faint); margin-top: 0.2rem; }
+
+/* Flow diagram */
+.flow { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; justify-content: center; }
+.flow-step {
+  background: var(--color-surface-offset);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 0.6rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-align: center;
+  min-width: 80px;
+  position: relative;
+}
+.flow-arrow { color: var(--color-primary); font-size: 1.2rem; font-weight: 700; }
+.flow-step.highlight { background: var(--color-primary-light); border-color: var(--color-primary); color: var(--color-primary); }
+
+/* Islamic Epistemology Pyramid */
+.pyramid-wrap { display: flex; flex-direction: column; align-items: center; gap: 0.3rem; margin: 1rem 0; }
+.pyramid-level {
+  border-radius: var(--radius-md);
+  padding: 0.6rem 1.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+.p1 { background: #1a5c4a; width: 90%; }
+.p2 { background: #236b56; width: 78%; }
+.p3 { background: #2c7a62; width: 66%; }
+.p4 { background: #358a6e; width: 55%; }
+.p5 { background: #3e9a7a; width: 44%; }
+.p6 { background: #47a986; width: 34%; }
+
+/* Cycle diagram */
+.cycle-container { position: relative; width: 280px; height: 280px; margin: 1.5rem auto; }
+.cycle-ring {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 3px solid var(--color-primary);
+  display: flex; align-items: center; justify-content: center;
+}
+.cycle-center {
+  background: var(--color-primary-light);
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  width: 90px; height: 90px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 800;
+  color: var(--color-primary);
+  text-align: center;
+}
+.cycle-node {
+  position: absolute;
+  background: var(--color-surface);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: center;
+  width: 90px;
+  box-shadow: var(--shadow-sm);
+}
+.cn-top { top: -16px; left: 50%; transform: translateX(-50%); }
+.cn-right { right: -16px; top: 50%; transform: translateY(-50%); }
+.cn-bottom { bottom: -16px; left: 50%; transform: translateX(-50%); }
+.cn-left { left: -16px; top: 50%; transform: translateY(-50%); }
+
+/* =================== REFERENCES =================== */
+.references-list { counter-reset: ref-counter; padding-left: 0; list-style: none; }
+.references-list li {
+  counter-increment: ref-counter;
+  display: flex; gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-divider);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+.references-list li::before {
+  content: counter(ref-counter) ".";
+  font-weight: 700;
+  color: var(--color-primary);
+  min-width: 1.75rem;
+  flex-shrink: 0;
+}
+.ref-authors { color: var(--color-text); font-weight: 600; }
+.ref-title { font-style: italic; }
+.ref-journal { color: var(--color-primary); }
+
+/* =================== MOBILE OVERLAY =================== */
+#sidebar-overlay { display: none; position: fixed; inset: 0; background: oklch(0 0 0 / 0.5); z-index: 99; }
+.btn-menu { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--color-surface-offset); border: 1px solid var(--color-border); color: var(--color-text-muted); position: absolute; left: 1.25rem; }
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  #sidebar { position: fixed; left: 0; top: 0; width: 280px; transform: translateX(-100%); height: 100vh; z-index: 200; }
+  #sidebar.open { transform: translateX(0); }
+  #sidebar-overlay.show { display: block; }
+  #main-content { height: 100dvh; }
+  .content-inner { padding: 1.25rem 1rem 3rem; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .hero { padding: 1.5rem; }
+  .cycle-container { width: 220px; height: 220px; }
+}
+
+/* =================== UTILITIES =================== */
+.mt-1 { margin-top: 0.5rem; } .mt-2 { margin-top: 1rem; } .mt-3 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: 0.5rem; } .mb-2 { margin-bottom: 1rem; }
+.text-muted { color: var(--color-text-muted); }
+.text-xs { font-size: var(--text-xs); }
+.font-bold { font-weight: 700; }
+.text-center { text-align: center; }
+ul.content-list { padding-left: 1.25rem; margin: 0.5rem 0; }
+ul.content-list li { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: 0.3rem; line-height: 1.6; }
+ul.content-list li strong { color: var(--color-text); }
+.theory-color-1 .theory-icon { background: #e8f2ee; color: #1a5c4a; }
+.theory-color-2 .theory-icon { background: #fdf3e0; color: #c8860a; }
+.theory-color-3 .theory-icon { background: #f0e8f8; color: #5c2d8a; }
+.theory-color-4 .theory-icon { background: #faf0ea; color: #7b3f1e; }
+.theory-color-5 .theory-icon { background: #e8f0f8; color: #1a4f7a; }
+.theory-color-6 .theory-icon { background: #fce8e8; color: #a02020; }
+.theory-color-7 .theory-icon { background: #e8f5ec; color: #286b3a; }
+.theory-color-8 .theory-icon { background: #fdf3e0; color: #c8860a; }
+.theory-color-9 .theory-icon { background: #f0e8f8; color: #5c2d8a; }
+.theory-color-10 .theory-icon { background: #faf0ea; color: #7b3f1e; }
+.theory-color-11 .theory-icon { background: #e8f0f8; color: #1a4f7a; }
+.quote-block {
+  border-left: 3px solid var(--color-gold);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  background: var(--color-gold-light);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+.quote-block p { font-size: var(--text-xs); font-style: italic; color: var(--color-text); max-width: none; }
+.quote-block cite { display: block; font-size: 0.7rem; color: var(--color-gold); font-weight: 700; margin-top: 0.3rem; font-style: normal; }
+</style>
+</head>
+<body>
+
+<!-- Sidebar Overlay -->
+<div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- =================== SIDEBAR =================== -->
+<nav id="sidebar" aria-label="Table of Contents">
+  <div class="sidebar-header">
+    <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Islamic Learning Logo">
+      <circle cx="18" cy="18" r="16" stroke="var(--color-primary)" stroke-width="2"/>
+      <path d="M18 8 L18 28 M8 18 L28 18" stroke="var(--color-gold)" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="18" cy="18" r="5" fill="var(--color-primary)" opacity="0.15"/>
+      <circle cx="18" cy="18" r="3" fill="var(--color-primary)"/>
+      <path d="M18 8 C14 12, 14 15, 18 18 C22 15, 22 12, 18 8Z" fill="var(--color-gold)" opacity="0.7"/>
+    </svg>
+    <div>
+      <div class="sidebar-title">Critical Review of Models of Learning</div>
+      <div class="sidebar-subtitle">Islamic Educational Psychology</div>
+    </div>
+  </div>
+  <div class="sidebar-controls">
+    <button class="btn-control" onclick="expandAll()">Expand All</button>
+    <button class="btn-control" onclick="collapseAll()">Collapse All</button>
+  </div>
+  <div class="nav-sections" id="nav-list">
+    <div class="nav-group-title">Introduction</div>
+    <div class="nav-item active" onclick="scrollTo('sec-intro')" data-section="sec-intro"><div class="nav-dot"></div>Overview & What is Learning</div>
+
+    <div class="nav-group-title">Western Learning Theories</div>
+    <div class="nav-item" onclick="scrollTo('sec-behav')" data-section="sec-behav"><div class="nav-dot"></div>Behaviorism</div>
+    <div class="nav-item" onclick="scrollTo('sec-cog')" data-section="sec-cog"><div class="nav-dot"></div>Cognitivism</div>
+    <div class="nav-item" onclick="scrollTo('sec-const')" data-section="sec-const"><div class="nav-dot"></div>Constructivism</div>
+    <div class="nav-item" onclick="scrollTo('sec-hum')" data-section="sec-hum"><div class="nav-dot"></div>Humanism</div>
+    <div class="nav-item" onclick="scrollTo('sec-conn')" data-section="sec-conn"><div class="nav-dot"></div>Connectivism</div>
+    <div class="nav-item" onclick="scrollTo('sec-meta')" data-section="sec-meta"><div class="nav-dot"></div>Metacognition & Self-Regulation</div>
+    <div class="nav-item" onclick="scrollTo('sec-mi')" data-section="sec-mi"><div class="nav-dot"></div>Multiple Intelligences</div>
+    <div class="nav-item" onclick="scrollTo('sec-social')" data-section="sec-social"><div class="nav-dot"></div>Social Learning (Bandura)</div>
+    <div class="nav-item" onclick="scrollTo('sec-exp')" data-section="sec-exp"><div class="nav-dot"></div>Experiential Learning</div>
+    <div class="nav-item" onclick="scrollTo('sec-andra')" data-section="sec-andra"><div class="nav-dot"></div>Andragogy</div>
+
+    <div class="nav-group-title">Islamic Traditions</div>
+    <div class="nav-item" onclick="scrollTo('sec-trad')" data-section="sec-trad"><div class="nav-dot"></div>Islamic Tradition Methods</div>
+    <div class="nav-item" onclick="scrollTo('sec-mantiq')" data-section="sec-mantiq"><div class="nav-dot"></div>Mantiq & Islamic Epistemology</div>
+    <div class="nav-group-title">Synthesis</div>
+    <div class="nav-item" onclick="scrollTo('sec-comparison')" data-section="sec-comparison"><div class="nav-dot"></div>Comparative Overview</div>
+    <div class="nav-item" onclick="scrollTo('sec-conclusion')" data-section="sec-conclusion"><div class="nav-dot"></div>Conclusion</div>
+    <div class="nav-item" onclick="scrollTo('sec-references')" data-section="sec-references"><div class="nav-dot"></div>References</div>
+  </div>
+  <div class="sidebar-footer">
+    <div class="progress-label"><span>Reading Progress</span><span id="progress-pct">0%</span></div>
+    <div class="progress-bar-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+  </div>
+</nav>
+
+<!-- =================== MAIN CONTENT =================== -->
+<main id="main-content" onscroll="updateProgress()">
+  <div id="topbar">
+    <div style="display:flex;align-items:center;gap:0.75rem;">
+      <button class="btn-menu" onclick="toggleSidebar()" aria-label="Open navigation">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <div class="breadcrumb"><span>📚</span> <span>Models of Learning</span> <span>›</span> <span id="current-section">Introduction</span></div>
+    </div>
+    <div class="topbar-right">
+      <div class="badge-level">Graduate Level</div>
+      <button class="btn-theme" data-theme-toggle aria-label="Toggle dark mode">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="content-inner">
+
+    <!-- =================== HERO =================== -->
+    <section class="section" id="sec-intro">
+      <div class="hero">
+        <div class="hero-khat">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ — اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</div>
+        <div class="hero-title">Critical Review of Models of Learning</div>
+        <div class="hero-subtitle">The Development of Integrated Islamic Personality — An Islamic Educational Psychology Perspective</div>
+        <div class="hero-meta">
+          <span class="hero-badge">📖 Islamic Educational Psychology</span>
+          <span class="hero-badge">🧠 11 Learning Theories</span>
+          <span class="hero-badge">🕌 Islamic Tradition Methods</span>
+          <span class="hero-badge">👤 Insan Kamil Framework</span>
+        </div>
+      </div>
+
+      <h2 class="section-heading"><span class="icon">🔍</span> What is Learning?</h2>
+      <p class="section-intro">Learning is a fundamental human activity that lies at the heart of all education. Before examining individual theories, it is essential to understand how "learning" is defined across different paradigms — and especially from an Islamic perspective.</p>
+
+      <div class="grid-2">
+        <div class="info-card">
+          <h5>📘 Western Definitions</h5>
+          <ul>
+            <li><strong>Behaviorists:</strong> "A relatively permanent change in behavior due to experience" (Skinner, 1938)</li>
+            <li><strong>Cognitivists:</strong> "A change in knowledge structures stored in memory" (Ausubel, 1968)</li>
+            <li><strong>Constructivists:</strong> "Active construction of meaning through experience and reflection" (Piaget, 1970)</li>
+            <li><strong>Humanists:</strong> "Self-actualized growth toward full human potential" (Maslow, 1943)</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h5>🌙 Islamic Definition of Learning (Ta'allum)</h5>
+          <ul>
+            <li><strong>Linguistically:</strong> Ta'allum — the process of acquiring 'ilm (knowledge)</li>
+            <li><strong>Al-Ghazali:</strong> Learning is a spiritual journey to know Allah, oneself, and the world</li>
+            <li><strong>Ibn Khaldun:</strong> Learning is a social, experiential, and intellectual process</li>
+            <li><strong>Quranic View:</strong> Begins with "Iqra" (Read!) — a command to seek knowledge as 'ibadah</li>
+            <li><strong>Goal:</strong> Development of Insan Kamil (The Complete/Perfect Human Being)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout callout-green mt-2">
+        <strong>🕌 Islamic Educational Psychology Perspective</strong>
+        <p>In Islam, learning is not merely cognitive or behavioral — it integrates the 'aql (intellect), ruh (spirit), qalb (heart), and jasad (body). The goal of learning is tarbiyah (holistic upbringing) leading to insan kamil — a person who is intellectually excellent, morally upright, spiritually connected, and socially responsible. This framework forms the evaluative lens of this entire review.</p>
+      </div>
+
+      <div class="diagram-container mt-2">
+        <div class="diagram-title">The Dimensions of Islamic Learning (Insan Kamil Model)</div>
+        <div class="pyramid-wrap">
+          <div class="pyramid-level p6">🔝 Insan Kamil — The Perfect/Complete Muslim Personality</div>
+          <div class="pyramid-level p5">Spiritual (Ruh) — Taqwa, Ikhlas, Tawakkul</div>
+          <div class="pyramid-level p4">Moral (Akhlaq) — Character, Ethics, Adab</div>
+          <div class="pyramid-level p3">Intellectual ('Aql) — 'Ilm, Hikmah, Tafakkur</div>
+          <div class="pyramid-level p2">Social (Mujtama') — Ukhuwwah, Shura, Amanah</div>
+          <div class="pyramid-level p1" style="width:100%">Physical (Jasad) — Health, Action, 'Amal — Foundation of Observable Learning</div>
+        </div>
+      </div>
+
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- =================== BEHAVIORISM =================== -->
+    <section class="section" id="sec-behav">
+      <h2 class="section-heading"><span class="icon">⚡</span> Behaviorism</h2>
+      <div class="theory-card theory-color-1 open" id="card-behav">
+        <div class="theory-card-header" onclick="toggleCard('card-behav')">
+          <div class="theory-icon">⚡</div>
+          <div>
+            <h3>Behaviorism — Stimulus-Response Theory</h3>
+            <p>Learning as observable behavioral change through conditioning and reinforcement</p>
+          </div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'behav','overview')">Overview</button>
+              <button class="tab-btn" onclick="switchTab(this,'behav','keyconcepts')">Key Concepts</button>
+              <button class="tab-btn" onclick="switchTab(this,'behav','methods')">Learning Methods</button>
+              <button class="tab-btn" onclick="switchTab(this,'behav','islamic')">Islamic Application</button>
+              <button class="tab-btn" onclick="switchTab(this,'behav','critique')">Critique & Islamic View</button>
+            </div>
+
+            <div id="behav-overview" class="tab-panel active">
+              <div class="quote-block">
+                <p>"Learning is a relatively permanent change in behavior due to experience."</p>
+                <cite>— B.F. Skinner (1938)</cite>
+              </div>
+              <p class="text-xs text-muted">Behaviorism, developed in the early 20th century, posits that all behaviors are learned through interaction with the environment. Learning is defined as a change in observable behavior — internal mental processes are not considered. The focus is entirely on stimulus (S) → response (R) patterns that can be measured and observed.</p>
+              <div class="grid-3 mt-2">
+                <div class="info-card"><h5>🧪 Classical Conditioning</h5><p>Pavlov (1901): Neutral stimuli become conditioned to produce responses through repeated pairing. Learning = association building.</p></div>
+                <div class="info-card"><h5>⚙️ Operant Conditioning</h5><p>Skinner (1938): Behavior is shaped by consequences. Reinforcement (reward) increases behavior; punishment decreases it.</p></div>
+                <div class="info-card"><h5>🔗 Connectionism</h5><p>Thorndike (1911): Law of Effect — behaviors followed by satisfying outcomes are strengthened; those followed by discomfort are weakened.</p></div>
+              </div>
+              <div class="callout callout-blue mt-2">
+                <strong>🧠 In Simple Words</strong>
+                <p>Behaviorism says: "You learn by doing and getting feedback." If you do something and get rewarded, you'll do it again. If you get punished, you'll stop. The teacher controls the environment — students are like "blank slates" shaped by external forces.</p>
+              </div>
+            </div>
+
+            <div id="behav-keyconcepts" class="tab-panel">
+              <div class="tags-wrap">
+                <span class="key-concept-tag">🔑 Stimulus-Response (S-R)</span>
+                <span class="key-concept-tag">🔑 Reinforcement</span>
+                <span class="key-concept-tag">🔑 Punishment</span>
+                <span class="key-concept-tag">🔑 Conditioning</span>
+                <span class="key-concept-tag">🔑 Extinction</span>
+                <span class="key-concept-tag">🔑 Shaping</span>
+                <span class="key-concept-tag">🔑 Generalization</span>
+                <span class="key-concept-tag">🔑 Discrimination</span>
+              </div>
+              <h3 class="sub-heading">Key Figures</h3>
+              <div class="grid-2">
+                <div class="info-card"><h5>👨‍🔬 Ivan Pavlov (1849–1936)</h5><p>Classical conditioning through salivation experiments with dogs. Proved that behavior can be conditioned through association.</p></div>
+                <div class="info-card"><h5>👨‍🔬 B.F. Skinner (1904–1990)</h5><p>Developed operant conditioning; invented the "Skinner Box." Argued that all behavior — including language — is learned through reinforcement schedules.</p></div>
+                <div class="info-card"><h5>👨‍🔬 John B. Watson (1878–1958)</h5><p>Founder of Behaviorism as a formal school. "Give me a dozen healthy infants..." — environment determines all behavior.</p></div>
+                <div class="info-card"><h5>👨‍🔬 Edward Thorndike (1874–1949)</h5><p>Law of Effect, Law of Exercise. Pioneered educational psychology and stimulus-response bond theory.</p></div>
+              </div>
+            </div>
+
+            <div id="behav-methods" class="tab-panel">
+              <h3 class="sub-heading">📚 Learning Methods Based on Behaviorism</h3>
+              <div class="grid-2">
+                <div class="info-card"><h5>Drill and Practice</h5><p>Repeated exercises to strengthen stimulus-response connections. Common in language learning, mathematics, Quran recitation drills.</p></div>
+                <div class="info-card"><h5>Programmed Instruction</h5><p>Step-by-step sequential learning with immediate feedback at each step (Skinner's teaching machines).</p></div>
+                <div class="info-card"><h5>Behavior Modification</h5><p>Token economy systems, reward charts, star stickers for good behavior in classrooms.</p></div>
+                <div class="info-card"><h5>Direct Instruction</h5><p>Teacher-centered, structured presentation of content with clear objectives and immediate corrective feedback.</p></div>
+              </div>
+              <div class="flow mt-2">
+                <div class="flow-step highlight">Stimulus (Input)</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Learner's Response</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">Reinforcement/Punishment</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step highlight">Behavior Change</div>
+              </div>
+            </div>
+
+            <div id="behav-islamic" class="tab-panel">
+              <h3 class="sub-heading">🕌 Application in Islamic Education</h3>
+              <div class="grid-2">
+                <div class="info-card"><h5>Tahfiz (Quran Memorization)</h5><p>Repetitive drilling of Quranic verses mirrors behaviorist conditioning. Tikrar (repetition) strengthens the memorization bond.</p></div>
+                <div class="info-card"><h5>Tarbiyah Discipline</h5><p>Islamic discipline (adab) through consistent reward-punishment structures parallels operant conditioning for character formation.</p></div>
+                <div class="info-card"><h5>Fiqh Practice</h5><p>Repeated practice of ibadah (prayer, fasting) creates habitual behavior — the Islamic goal of 'amal (action) aligns with behavioral outcomes.</p></div>
+                <div class="info-card"><h5>Madrasah Repetition</h5><p>Traditional murajaah (review) and talaqqi methods use repetition-based learning — consistent with behaviorist principles.</p></div>
+              </div>
+              <div class="callout callout-gold">
+                <strong>🌙 Islamic Values that Resemble Behaviorism</strong>
+                <p><strong>Istiqamah</strong> (consistency), <strong>Muhasabah</strong> (self-accountability), <strong>Reward-Punishment in Akhirah</strong> (divine reinforcement system), <strong>Niyyah</strong> (intention shapes behavior — though this is internal, unlike pure behaviorism)</p>
+              </div>
+            </div>
+
+            <div id="behav-critique" class="tab-panel">
+              <h3 class="sub-heading">⚖️ Critical Review from Islamic Perspective</h3>
+              <div class="grid-2">
+                <div class="info-card">
+                  <h5>✅ Points of Agreement</h5>
+                  <ul>
+                    <li>Importance of habit formation ('adat) in Islam</li>
+                    <li>Role of environment in shaping behavior — Islamic concern for tarbiyah environment</li>
+                    <li>Reinforcement through divine reward/punishment mirrors behavioral consequences</li>
+                    <li>Repetition is valued in Islamic learning (tikrar, murajaah)</li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h5>❌ Points of Critique</h5>
+                  <ul>
+                    <li>Ignores the soul (ruh) and inner spiritual dimension of learning</li>
+                    <li>Treats humans as passive organisms — contradicts Islamic concept of khalifah (vicegerency)</li>
+                    <li>Overlooks niyyah (intention) — Islam emphasizes inner motivation, not just external behavior</li>
+                    <li>Materialist worldview conflicts with Islamic epistemology</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="callout callout-brown">
+                <strong>👨‍🏫 Muslim Scholars on Similar Concepts</strong>
+                <p><strong>Al-Ghazali</strong> acknowledged the role of habit ('adat) in character formation (Akhlaq). In Ihya' Ulum al-Din, he emphasized consistent practice (mudawamah) as the path to virtue — a concept parallel to behavioral conditioning, but with a spiritual foundation of sincerity (ikhlas) and divine consciousness (taqwa). <strong>Ibn Khaldun</strong> in Muqaddimah noted that skills and knowledge are acquired through repetition and practice.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== COGNITIVISM =================== -->
+    <section class="section" id="sec-cog">
+      <h2 class="section-heading"><span class="icon">🧠</span> Cognitivism</h2>
+      <div class="theory-card theory-color-2" id="card-cog">
+        <div class="theory-card-header" onclick="toggleCard('card-cog')">
+          <div class="theory-icon">🧠</div>
+          <div><h3>Cognitivism — Information Processing Theory</h3><p>Learning as mental processes: thinking, memory, understanding, and knowledge organization</p></div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'cog','overview')">Overview</button>
+              <button class="tab-btn" onclick="switchTab(this,'cog','keyconcepts')">Key Concepts</button>
+              <button class="tab-btn" onclick="switchTab(this,'cog','methods')">Learning Methods</button>
+              <button class="tab-btn" onclick="switchTab(this,'cog','islamic')">Islamic Application</button>
+              <button class="tab-btn" onclick="switchTab(this,'cog','critique')">Critique & Islamic View</button>
+            </div>
+            <div id="cog-overview" class="tab-panel active">
+              <p class="text-xs text-muted">Cognitivism emerged in the 1950s as a response to behaviorism's neglect of mental processes. It views the mind as an information processor — like a computer — that encodes, stores, and retrieves information. Learning involves changes in internal cognitive structures (schemas), not just observable behavior.</p>
+              <div class="callout callout-blue">
+                <strong>🧠 In Simple Words</strong>
+                <p>Cognitivism says: "Learning is about HOW you think, not just WHAT you do." Your brain organizes information into mental structures (schemas). Good learning happens when new information is meaningfully connected to what you already know.</p>
+              </div>
+              <div class="diagram-container">
+                <div class="diagram-title">Information Processing Model (Atkinson & Shiffrin, 1968)</div>
+                <div class="flow">
+                  <div class="flow-step">Sensory Input (Environment)</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step highlight">Sensory Memory (1–2 sec)</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step">Working Memory (15–30 sec)</div>
+                  <div class="flow-arrow">⇔</div>
+                  <div class="flow-step highlight">Long-Term Memory (Permanent)</div>
+                </div>
+              </div>
+            </div>
+            <div id="cog-keyconcepts" class="tab-panel">
+              <div class="tags-wrap">
+                <span class="key-concept-tag">🔑 Schemas</span>
+                <span class="key-concept-tag">🔑 Working Memory</span>
+                <span class="key-concept-tag">🔑 Long-Term Memory</span>
+                <span class="key-concept-tag">🔑 Assimilation</span>
+                <span class="key-concept-tag">🔑 Accommodation</span>
+                <span class="key-concept-tag">🔑 Cognitive Load</span>
+                <span class="key-concept-tag">🔑 Advance Organizers</span>
+                <span class="key-concept-tag">🔑 Meaningful Learning</span>
+              </div>
+              <div class="grid-2 mt-2">
+                <div class="info-card"><h5>👨‍🔬 Jean Piaget (1896–1980)</h5><p>Stages of cognitive development: Sensorimotor → Preoperational → Concrete Operational → Formal Operational. Schema, assimilation, accommodation, equilibration.</p></div>
+                <div class="info-card"><h5>👨‍🔬 David Ausubel (1918–2008)</h5><p>Meaningful learning vs rote learning. Advance organizers to connect new knowledge to existing schemas. Developed Assimilation Theory.</p></div>
+                <div class="info-card"><h5>👨‍🔬 Jerome Bruner (1915–2016)</h5><p>Discovery learning and spiral curriculum. Knowledge builds on itself. Enactive, iconic, symbolic modes of representation.</p></div>
+                <div class="info-card"><h5>👨‍🔬 George Miller (1920–2012)</h5><p>"The Magical Number Seven" — working memory capacity. Chunking information for better processing and retention.</p></div>
+              </div>
+            </div>
+            <div id="cog-methods" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>Concept Mapping</h5><p>Visual organization of knowledge to show relationships between ideas — activates schema building.</p></div>
+                <div class="info-card"><h5>Discovery Learning</h5><p>Students discover concepts through guided inquiry — promotes active schema construction.</p></div>
+                <div class="info-card"><h5>Graphic Organizers</h5><p>Mind maps, Venn diagrams, flowcharts to organize cognitive structures and reduce extraneous cognitive load.</p></div>
+                <div class="info-card"><h5>Elaboration & Retrieval Practice</h5><p>Testing effect — retrieving information from memory strengthens long-term storage.</p></div>
+              </div>
+            </div>
+            <div id="cog-islamic" class="tab-panel">
+              <div class="callout callout-green">
+                <strong>🌙 Islamic Concepts Parallel to Cognitivism</strong>
+                <p><strong>'Aql</strong> (intellect/reason) in Islamic epistemology aligns with cognitive processing. <strong>Tafakkur</strong> (deep reflection) parallels metacognitive thinking. <strong>Tadabbur</strong> (pondering Quranic meaning) mirrors meaningful learning. The Quran repeatedly calls for reflection: "أَفَلَا تَعْقِلُونَ" (Do you not reason?)</p>
+              </div>
+              <div class="grid-2 mt-1">
+                <div class="info-card"><h5>Tafseer Learning</h5><p>Quranic interpretation requires schema-based prior knowledge of Arabic, Asbab al-Nuzul (revelation context), and usul al-fiqh — cognitive scaffolding.</p></div>
+                <div class="info-card"><h5>Aqeedah (Creed) Education</h5><p>Building Islamic belief (iman) through rational reasoning ('aql) and evidence — aligns with cognitive schema building.</p></div>
+              </div>
+              <div class="callout callout-brown mt-2">
+                <strong>👨‍🏫 Muslim Scholars</strong>
+                <p><strong>Ibn Sina (Avicenna, 980–1037)</strong> — His psychology of the intellect (al-aql) in Kitab al-Shifa mirrors cognitive processing stages. He described how the Rational Soul processes sensory information to produce knowledge. <strong>Al-Farabi (872–950)</strong> described the role of the Active Intellect in knowledge acquisition — the mind actively processes forms from matter.</p>
+              </div>
+            </div>
+            <div id="cog-critique" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>✅ Points of Agreement</h5><ul><li>Islam values intellectual reasoning ('aql) as a primary source of knowledge</li><li>Tafakkur (reflection) is a Quranic command — cognitive processing is endorsed</li><li>Schema building aligns with Islamic knowledge structures (from mujmal to mufassal)</li></ul></div>
+                <div class="info-card"><h5>❌ Points of Critique</h5><ul><li>Mechanistic computer metaphor reduces human mind to information processor — ignores the ruh (soul)</li><li>Focuses only on rational/'aql knowledge — misses kashf (spiritual revelation) and 'ilm al-ladunni (divinely gifted knowledge)</li><li>Does not account for the moral dimension of knowledge in Islam</li></ul></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== CONSTRUCTIVISM =================== -->
+    <section class="section" id="sec-const">
+      <h2 class="section-heading"><span class="icon">🏗️</span> Constructivism</h2>
+      <div class="theory-card theory-color-3" id="card-const">
+        <div class="theory-card-header" onclick="toggleCard('card-const')">
+          <div class="theory-icon">🏗️</div>
+          <div><h3>Constructivism — Knowledge Construction Theory</h3><p>Learners actively construct knowledge through experience, reflection, and social interaction</p></div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'const','overview')">Overview</button>
+              <button class="tab-btn" onclick="switchTab(this,'const','keyconcepts')">Key Concepts</button>
+              <button class="tab-btn" onclick="switchTab(this,'const','methods')">Learning Methods</button>
+              <button class="tab-btn" onclick="switchTab(this,'const','islamic')">Islamic Application</button>
+              <button class="tab-btn" onclick="switchTab(this,'const','critique')">Critique & Islamic View</button>
+            </div>
+            <div id="const-overview" class="tab-panel active">
+              <p class="text-xs text-muted">Constructivism holds that learners do not passively receive knowledge — they actively construct it through interaction with their environment and social contexts. Two major branches: <em>Cognitive Constructivism</em> (Piaget) and <em>Social Constructivism</em> (Vygotsky). Knowledge is built, not transmitted.</p>
+              <div class="callout callout-blue">
+                <strong>🧠 In Simple Words</strong>
+                <p>Constructivism says: "You learn best by DOING and BUILDING your own understanding." Every learner brings prior knowledge — new learning connects to and expands existing understanding. The best learning happens through active engagement, not passive listening.</p>
+              </div>
+              <div class="grid-2 mt-2">
+                <div class="info-card"><h5>🏗️ Cognitive Constructivism (Piaget)</h5><p>Individual constructs knowledge through direct experience. Stages of cognitive development. Child must be "ready" to learn. Learning through disequilibrium (conflict) and equilibration.</p></div>
+                <div class="info-card"><h5>🤝 Social Constructivism (Vygotsky)</h5><p>Knowledge is co-constructed in social interaction. Zone of Proximal Development (ZPD) — the gap between what a learner can do alone vs. with guidance. Scaffolding by more knowledgeable others.</p></div>
+              </div>
+            </div>
+            <div id="const-keyconcepts" class="tab-panel">
+              <div class="tags-wrap">
+                <span class="key-concept-tag">🔑 ZPD (Zone of Proximal Development)</span>
+                <span class="key-concept-tag">🔑 Scaffolding</span>
+                <span class="key-concept-tag">🔑 Schema Construction</span>
+                <span class="key-concept-tag">🔑 Active Learning</span>
+                <span class="key-concept-tag">🔑 Inquiry-Based Learning</span>
+                <span class="key-concept-tag">🔑 Social Interaction</span>
+                <span class="key-concept-tag">🔑 Disequilibrium</span>
+              </div>
+              <div class="grid-2 mt-2">
+                <div class="info-card"><h5>👨‍🔬 Jean Piaget (1896–1980)</h5><p>Cognitive constructivism. Children build knowledge through stages of development. Active exploration leads to schema construction.</p></div>
+                <div class="info-card"><h5>👨‍🔬 Lev Vygotsky (1896–1934)</h5><p>Social constructivism. ZPD — learning happens in the gap between current ability and potential with guidance. Language as a thinking tool.</p></div>
+              </div>
+            </div>
+            <div id="const-methods" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>Problem-Based Learning (PBL)</h5><p>Students solve real-world problems, constructing knowledge through investigation and collaboration.</p></div>
+                <div class="info-card"><h5>Project-Based Learning</h5><p>Extended inquiry projects where students research, build, and present solutions.</p></div>
+                <div class="info-card"><h5>Collaborative Learning</h5><p>Group work, peer teaching, and discussion — social construction of knowledge through dialogue.</p></div>
+                <div class="info-card"><h5>Socratic Dialogue</h5><p>Questioning to challenge and reconstruct existing understanding — similar to Quranic dialogues.</p></div>
+              </div>
+            </div>
+            <div id="const-islamic" class="tab-panel">
+              <div class="callout callout-green">
+                <strong>🌙 'Ilm and 'Amal — Islamic Constructivism</strong>
+                <p>Constructivism strongly aligns with Islamic pedagogy: <strong>'Ilm followed by 'Amal</strong> (knowledge must lead to action) mirrors the constructivist idea that knowledge is only complete when applied. <strong>Tafakkur</strong> (reflection), <strong>Tadabbur</strong> (contemplation), and <strong>Shura</strong> (consultation) are Islamic constructivist learning tools.</p>
+              </div>
+              <div class="grid-2 mt-1">
+                <div class="info-card"><h5>Halaqah (Study Circle)</h5><p>Traditional Islamic halaqah is social constructivism in action — students build understanding collaboratively under a teacher's guidance, paralleling Vygotsky's ZPD with the teacher as the "More Knowledgeable Other" (MKO).</p></div>
+                <div class="info-card"><h5>Muzakarah (Discussion)</h5><p>Islamic scholarly debate and discussion method directly mirrors social constructivism — knowledge is socially constructed through dialogue and argumentation.</p></div>
+              </div>
+              <div class="callout callout-brown mt-1">
+                <strong>👨‍🏫 Muslim Scholars</strong>
+                <p><strong>Al-Ghazali</strong> emphasized that understanding (fahm) must precede memorization — pure rote learning without comprehension is deficient. This aligns with constructivist meaningful learning. <strong>Ibn Rushd (Averroes, 1126–1198)</strong> emphasized rational inquiry and active engagement with texts through commentary — a form of intellectual construction.</p>
+              </div>
+            </div>
+            <div id="const-critique" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>✅ Strong Agreement</h5><ul><li>Active engagement with knowledge ('ilm + 'amal) is central to Islamic learning</li><li>Social learning through halaqah and muzakarah mirrors social constructivism</li><li>Teacher as scaffolding guide (murabbi) parallels ZPD concept</li><li>Tafakkur = constructive reflection</li></ul></div>
+                <div class="info-card"><h5>❌ Areas of Tension</h5><ul><li>Radical constructivism (Glasersfeld) — "truth is subjectively constructed" — conflicts with Islamic belief in objective revealed truth (wahy)</li><li>Islam distinguishes between 'ilm yaqini (certain knowledge from revelation) and 'ilm zanni (probable knowledge from reason/experience)</li><li>Not all knowledge can be "discovered" — some requires transmission from authority (naql)</li></ul></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== HUMANISM =================== -->
+    <section class="section" id="sec-hum">
+      <h2 class="section-heading"><span class="icon">💛</span> Humanism</h2>
+      <div class="theory-card theory-color-4" id="card-hum">
+        <div class="theory-card-header" onclick="toggleCard('card-hum')">
+          <div class="theory-icon">💛</div>
+          <div><h3>Humanism — Person-Centered Learning Theory</h3><p>Learning as self-actualization, personal growth, and the fulfillment of human potential</p></div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'hum','overview')">Overview</button>
+              <button class="tab-btn" onclick="switchTab(this,'hum','keyconcepts')">Key Concepts</button>
+              <button class="tab-btn" onclick="switchTab(this,'hum','methods')">Methods</button>
+              <button class="tab-btn" onclick="switchTab(this,'hum','islamic')">Islamic Application</button>
+              <button class="tab-btn" onclick="switchTab(this,'hum','critique')">Critique & Islamic View</button>
+            </div>
+            <div id="hum-overview" class="tab-panel active">
+              <p class="text-xs text-muted">Humanistic psychology emerged in the 1950s as the "Third Force" against behaviorism and psychoanalysis. It emphasizes the inherent goodness of humans, the importance of subjective experience, and the drive toward self-actualization. Learning is seen as a holistic, personal, and emotionally meaningful process.</p>
+              <div class="callout callout-blue">
+                <strong>🧠 In Simple Words</strong>
+                <p>Humanism says: "Every person has natural potential and a drive to grow. Learning should be meaningful, self-directed, and emotionally engaging. The teacher's role is to be a FACILITATOR — creating a safe, nurturing space for students to discover and develop themselves."</p>
+              </div>
+              <div class="diagram-container">
+                <div class="diagram-title">Maslow's Hierarchy of Needs (1943)</div>
+                <div class="pyramid-wrap">
+                  <div class="pyramid-level p6">🔝 Self-Actualization — Realizing full potential</div>
+                  <div class="pyramid-level p5">Esteem — Achievement, Recognition, Respect</div>
+                  <div class="pyramid-level p4">Love & Belonging — Relationships, Community</div>
+                  <div class="pyramid-level p3">Safety — Security, Order, Stability</div>
+                  <div class="pyramid-level p1" style="width:100%">Physiological — Food, Shelter, Sleep (Basic Needs)</div>
+                </div>
+              </div>
+            </div>
+            <div id="hum-keyconcepts" class="tab-panel">
+              <div class="tags-wrap">
+                <span class="key-concept-tag">🔑 Self-Actualization</span>
+                <span class="key-concept-tag">🔑 Hierarchy of Needs</span>
+                <span class="key-concept-tag">🔑 Intrinsic Motivation</span>
+                <span class="key-concept-tag">🔑 Student-Centered Learning</span>
+                <span class="key-concept-tag">🔑 Empathy</span>
+                <span class="key-concept-tag">🔑 Autonomy</span>
+                <span class="key-concept-tag">🔑 Unconditional Positive Regard</span>
+              </div>
+              <div class="grid-2 mt-2">
+                <div class="info-card"><h5>👨‍🔬 Abraham Maslow (1908–1970)</h5><p>Hierarchy of Needs. Learning is maximized when lower-order needs are met. Self-actualization is the pinnacle of human development.</p></div>
+                <div class="info-card"><h5>👨‍🔬 Carl Rogers (1902–1987)</h5><p>Person-centered therapy extended to education. "Significant learning takes place only when subject matter is perceived by the student as relevant." Teacher as facilitator, not authority.</p></div>
+              </div>
+            </div>
+            <div id="hum-methods" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>Student-Centered Learning</h5><p>Students choose topics, pace, and modes of learning based on personal interest and relevance.</p></div>
+                <div class="info-card"><h5>Experiential Learning</h5><p>Learning by doing meaningful, real-world activities that connect to the learner's life.</p></div>
+                <div class="info-card"><h5>Reflective Journaling</h5><p>Students document personal learning experiences and emotional responses for self-awareness and growth.</p></div>
+                <div class="info-card"><h5>Cooperative Learning</h5><p>Emotionally supportive group environments where each person contributes to shared growth.</p></div>
+              </div>
+            </div>
+            <div id="hum-islamic" class="tab-panel">
+              <div class="callout callout-green">
+                <strong>🌙 Islamic Humanist Values</strong>
+                <p>Islam shares humanist values of <strong>karamah insaniyyah</strong> (human dignity), <strong>fitrah</strong> (innate pure nature), and <strong>ihsan</strong> (excellence). However, Islamic humanism is <em>theocentric</em> — human potential is realized THROUGH obedience to Allah, not independent of it. Self-actualization in Islam is insan kamil — achieved through taqwa, not secular self-fulfillment.</p>
+              </div>
+              <div class="grid-2 mt-1">
+                <div class="info-card"><h5>Fitrah and Human Potential</h5><p>The Islamic concept of fitrah (innate human disposition toward goodness and recognition of Allah) aligns with Maslow's view of inherent human goodness and growth potential.</p></div>
+                <div class="info-card"><h5>Ihsan in Education</h5><p>Ihsan (doing one's best, as if Allah is watching) provides intrinsic motivation that exceeds humanistic self-actualization — it is motivation driven by divine consciousness.</p></div>
+              </div>
+              <div class="callout callout-brown mt-1">
+                <strong>👨‍🏫 Muslim Scholars</strong>
+                <p><strong>Al-Ghazali</strong>'s concept of Tahzib al-Akhlaq (purification of character) mirrors humanistic personal development but with spiritual purpose. <strong>Ibn Miskawayh (932–1030)</strong> in Tahdhib al-Akhlaq proposed a holistic model of human development including body, mind, and soul — paralleling humanist holism but grounded in Islamic ethics.</p>
+              </div>
+            </div>
+            <div id="hum-critique" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>✅ Points of Agreement</h5><ul><li>Human dignity (karamah) is central to Islamic education</li><li>Fitrah supports the view of inherent human goodness</li><li>Intrinsic motivation (ikhlas) is valued over external reward</li><li>Teacher as nurturing guide (murabbi) aligns with Rogers' facilitator role</li></ul></div>
+                <div class="info-card"><h5>❌ Points of Critique</h5><ul><li>Secular humanism places self-actualization above God-consciousness — contradicts Islamic tawwhid</li><li>Maslow's hierarchy neglects the spiritual (ruhani) dimension as a foundational need</li><li>Over-emphasis on autonomy may conflict with Islamic concepts of 'ubudiyyah (servitude to Allah) and obedience</li><li>Islamic self-actualization = insan kamil, achieved through taqwa + 'ilm + 'amal</li></ul></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== CONNECTIVISM =================== -->
+    <section class="section" id="sec-conn">
+      <h2 class="section-heading"><span class="icon">🌐</span> Connectivism</h2>
+      <div class="theory-card theory-color-5" id="card-conn">
+        <div class="theory-card-header" onclick="toggleCard('card-conn')">
+          <div class="theory-icon">🌐</div>
+          <div><h3>Connectivism — Digital Age Learning Theory</h3><p>Learning through networks, connections, and information flows in a digital, interconnected world</p></div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'conn','overview')">Overview</button>
+              <button class="tab-btn" onclick="switchTab(this,'conn','keyconcepts')">Key Concepts</button>
+              <button class="tab-btn" onclick="switchTab(this,'conn','methods')">Methods</button>
+              <button class="tab-btn" onclick="switchTab(this,'conn','islamic')">Islamic Application</button>
+              <button class="tab-btn" onclick="switchTab(this,'conn','critique')">Critique & Islamic View</button>
+            </div>
+            <div id="conn-overview" class="tab-panel active">
+              <p class="text-xs text-muted">Connectivism (Siemens, 2005; Downes, 2005) was developed as a learning theory for the digital age. It challenges the notion that all learning resides "inside the individual," arguing that knowledge exists in networks — between people, organizations, and technology. Learning is the process of connecting to and navigating these networks.</p>
+              <div class="callout callout-blue">
+                <strong>🧠 In Simple Words</strong>
+                <p>Connectivism says: "Learning is about CONNECTIONS — to people, information, and technology. In today's world, knowing WHERE to find knowledge is more important than memorizing facts. The internet, social networks, and collaborative platforms are extensions of our learning."</p>
+              </div>
+              <div class="diagram-container">
+                <div class="diagram-title">Siemens' 8 Principles of Connectivism (2005)</div>
+                <div class="mindmap">
+                  <div class="mindmap-center">Connectivism</div>
+                  <div class="mindmap-branches">
+                    <div class="mindmap-branch"><div class="branch-label">Diversity of Opinions</div><div class="branch-sub">Learning rests in variety of perspectives</div></div>
+                    <div class="mindmap-branch"><div class="branch-label">Connecting Nodes</div><div class="branch-sub">Learning = making connections</div></div>
+                    <div class="mindmap-branch"><div class="branch-label">Non-Human Appliances</div><div class="branch-sub">Knowledge can reside in AI/technology</div></div>
+                    <div class="mindmap-branch"><div class="branch-label">Capacity to Know</div><div class="branch-sub">More critical than current knowledge</div></div>
+                    <div class="mindmap-branch"><div class="branch-label">Nurture Connections</div><div class="branch-sub">Maintaining networks for learning</div></div>
+                    <div class="mindmap-branch"><div class="branch-label">Currency of Knowledge</div><div class="branch-sub">Up-to-date knowledge is the goal</div></div>
+                    <div class="mindmap-branch"><div class="branch-label">Decision Making</div><div class="branch-sub">Learning = choosing what to learn</div></div>
+                    <div class="mindmap-branch"><div class="branch-label">Network Creation</div><div class="branch-sub">Personal learning network building</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="conn-keyconcepts" class="tab-panel">
+              <div class="tags-wrap">
+                <span class="key-concept-tag">🔑 Personal Learning Network (PLN)</span>
+                <span class="key-concept-tag">🔑 Distributed Knowledge</span>
+                <span class="key-concept-tag">🔑 Node & Connection</span>
+                <span class="key-concept-tag">🔑 Information Flow</span>
+                <span class="key-concept-tag">🔑 Half-Life of Knowledge</span>
+                <span class="key-concept-tag">🔑 Sense-Making</span>
+                <span class="key-concept-tag">🔑 MOOCs</span>
+              </div>
+              <div class="grid-2 mt-2">
+                <div class="info-card"><h5>👨‍🔬 George Siemens (b. 1970)</h5><p>Coined the term "connectivism." Argued that the digital age has fundamentally changed how we learn. Knowledge exists in networks, not just in individuals.</p></div>
+                <div class="info-card"><h5>👨‍🔬 Stephen Downes (b. 1958)</h5><p>Co-developer of connectivism. Emphasizes distributed knowledge and the role of online communities, blogs, and social networks as learning environments. Pioneer of MOOCs.</p></div>
+              </div>
+            </div>
+            <div id="conn-methods" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>MOOCs & Online Learning</h5><p>Massive Open Online Courses — democratizing access to knowledge beyond geographic boundaries.</p></div>
+                <div class="info-card"><h5>Personal Learning Networks</h5><p>Building curated networks of experts, peers, and resources on social media and professional platforms.</p></div>
+                <div class="info-card"><h5>RSS Feeds & Curation</h5><p>Following, filtering, and synthesizing information from multiple digital sources.</p></div>
+                <div class="info-card"><h5>Collaborative Online Tools</h5><p>Wikis, Google Docs, forums — co-constructing knowledge across distributed networks.</p></div>
+              </div>
+            </div>
+            <div id="conn-islamic" class="tab-panel">
+              <div class="callout callout-green">
+                <strong>🌙 Islamic Parallels to Connectivism</strong>
+                <p>The Islamic <strong>isnad</strong> (chain of transmission) is a historical connectivist network — scholars are connected across time and geography through chains of authenticated narration. The concept of <strong>ummah</strong> (global Muslim community) is a living distributed learning network. Islamic <strong>ijazah</strong> (certification of knowledge) is a credentialing system for trustworthy nodes in the knowledge network.</p>
+              </div>
+              <div class="grid-2 mt-1">
+                <div class="info-card"><h5>Isnad System as Connectivist Network</h5><p>The hadith transmission system is an authenticated knowledge network across 1400+ years — each narrator is a "node" with verified credentials, forming what is arguably history's oldest verified knowledge graph.</p></div>
+                <div class="info-card"><h5>Digital Dawah & Online Islamic Learning</h5><p>Contemporary Islamic scholars using YouTube, podcasts, and online courses mirror connectivist learning — connecting global learners to authentic Islamic knowledge networks.</p></div>
+              </div>
+            </div>
+            <div id="conn-critique" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>✅ Valuable Insights</h5><ul><li>Ummah as a global learning network — isnad and ijazah systems</li><li>Digital tools can extend Islamic knowledge to global audiences</li><li>Emphasis on relevance and currency aligns with Islamic fiqh adaptation to new contexts</li></ul></div>
+                <div class="info-card"><h5>❌ Areas of Concern</h5><ul><li>Knowledge in non-human systems — Islamic epistemology asserts that true knowledge ('ilm) is always linked to human moral responsibility and accountability</li><li>Risk of misinformation in digital networks contradicts Islamic emphasis on verified transmission (isnad)</li><li>Connectivism lacks an ethical or spiritual foundation — Islamic knowledge networks must uphold adab (proper conduct)</li></ul></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== METACOGNITION =================== -->
+    <section class="section" id="sec-meta">
+      <h2 class="section-heading"><span class="icon">🔍</span> Metacognition & Self-Regulation</h2>
+      <div class="theory-card theory-color-6" id="card-meta">
+        <div class="theory-card-header" onclick="toggleCard('card-meta')">
+          <div class="theory-icon">🔍</div>
+          <div><h3>Metacognition & Self-Regulated Learning</h3><p>"Thinking about thinking" — awareness and regulation of one's own cognitive processes</p></div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'meta','overview')">Overview</button>
+              <button class="tab-btn" onclick="switchTab(this,'meta','keyconcepts')">Key Concepts</button>
+              <button class="tab-btn" onclick="switchTab(this,'meta','methods')">Methods</button>
+              <button class="tab-btn" onclick="switchTab(this,'meta','islamic')">Islamic Application</button>
+              <button class="tab-btn" onclick="switchTab(this,'meta','critique')">Critique & Islamic View</button>
+            </div>
+            <div id="meta-overview" class="tab-panel active">
+              <p class="text-xs text-muted">Metacognition — "thinking about one's own thinking" — was popularized by John Flavell (1976). Self-Regulated Learning (SRL) by Zimmerman (1990) extends this to describe learners who plan, monitor, and evaluate their own learning processes. Research shows that metacognitive learners achieve significantly better academic outcomes.</p>
+              <div class="callout callout-blue">
+                <strong>🧠 In Simple Words</strong>
+                <p>Metacognition means: "I know HOW I learn, and I can control and improve my learning process." A metacognitive learner thinks: "I don't understand this yet. Let me try a different strategy. I'll test myself to see if I really know it." It's learning to be a better learner.</p>
+              </div>
+              <div class="diagram-container">
+                <div class="diagram-title">Zimmerman's Self-Regulated Learning Cycle</div>
+                <div class="cycle-container">
+                  <div class="cycle-ring"></div>
+                  <div class="cycle-center">Self-Regulated<br>Learning</div>
+                  <div class="cycle-node cn-top">📋 Planning<br><small>Goal-setting, Strategy selection</small></div>
+                  <div class="cycle-node cn-right">⚡ Performance<br><small>Self-monitoring, Strategy use</small></div>
+                  <div class="cycle-node cn-bottom">🔎 Self-Reflection<br><small>Self-evaluation, Attribution</small></div>
+                  <div class="cycle-node cn-left">💡 Forethought<br><small>Motivation, Prior knowledge</small></div>
+                </div>
+              </div>
+            </div>
+            <div id="meta-keyconcepts" class="tab-panel">
+              <div class="tags-wrap">
+                <span class="key-concept-tag">🔑 Metacognitive Knowledge</span>
+                <span class="key-concept-tag">🔑 Metacognitive Regulation</span>
+                <span class="key-concept-tag">🔑 Planning</span>
+                <span class="key-concept-tag">🔑 Monitoring</span>
+                <span class="key-concept-tag">🔑 Evaluating</span>
+                <span class="key-concept-tag">🔑 Self-Efficacy</span>
+                <span class="key-concept-tag">🔑 Goal-Setting</span>
+              </div>
+              <div class="grid-2 mt-2">
+                <div class="info-card"><h5>👨‍🔬 John Flavell (1928–present)</h5><p>Coined "metacognition" in 1976. Three types: Person knowledge, Task knowledge, Strategy knowledge. Foundational theorist of metacognition.</p></div>
+                <div class="info-card"><h5>👨‍🔬 Barry Zimmerman (1942–2017)</h5><p>Self-Regulated Learning (SRL) — cyclical model of forethought, performance, and self-reflection phases. Emphasized self-efficacy beliefs.</p></div>
+              </div>
+            </div>
+            <div id="meta-methods" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>Think-Aloud Protocol</h5><p>Verbalizing thought processes while solving problems — makes cognitive strategies visible and learnable.</p></div>
+                <div class="info-card"><h5>Self-Assessment Rubrics</h5><p>Students evaluate their own work against clear criteria — builds metacognitive awareness of quality.</p></div>
+                <div class="info-card"><h5>Learning Journals</h5><p>Daily reflection on what was learned, what was difficult, and what strategies helped — develops metacognitive monitoring.</p></div>
+                <div class="info-card"><h5>Spaced Repetition & Retrieval Practice</h5><p>Strategic self-testing and spacing of review — evidence-based metacognitive strategies for long-term retention.</p></div>
+              </div>
+            </div>
+            <div id="meta-islamic" class="tab-panel">
+              <div class="callout callout-green">
+                <strong>🌙 Islamic Metacognitive Concepts: Theocentric Metacognition</strong>
+                <p><strong>Muhasabah</strong> (self-accounting/reflection) — daily self-examination: "What did I learn? Did I act on it?" — mirrors metacognitive self-evaluation. <strong>Tafakkur</strong> (deep thinking about creation and knowledge) — Islamic metacognitive reflection. <strong>Muraqabah</strong> (consciousness of Allah's oversight) provides the motivational foundation for consistent self-regulation. Integration of SRL with Islamic values transforms learning into <em>intellectual worship (thalab al-'ilm)</em>.</p>
+              </div>
+              <div class="grid-2 mt-1">
+                <div class="info-card"><h5>Niyyah as Metacognitive Forethought</h5><p>The Islamic practice of setting intention (niyyah) before any act mirrors Zimmerman's "Forethought Phase" — planning with purpose and clarity of goal.</p></div>
+                <div class="info-card"><h5>Murajaah as Spaced Repetition</h5><p>The practice of murajaah (Quranic review) is a centuries-old implementation of spaced repetition — the most evidence-based metacognitive strategy for long-term retention.</p></div>
+              </div>
+            </div>
+            <div id="meta-critique" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>✅ Strong Alignment</h5><ul><li>Muhasabah (self-accountability) = metacognitive self-evaluation</li><li>Niyyah (intention-setting) = forethought phase in SRL</li><li>Islamic emphasis on 'aql and tafakkur supports cognitive self-monitoring</li><li>Murajaah as evidence-based retrieval practice</li></ul></div>
+                <div class="info-card"><h5>⚠️ Enrichment from Islam</h5><ul><li>Islamic SRL adds the <em>spiritual dimension</em> — learning as worship elevates motivation beyond secular self-efficacy</li><li>Muraqabah (divine oversight) creates consistent self-regulation rooted in taqwa, not just academic goals</li><li>Islamic muhasabah extends beyond cognitive to moral self-evaluation</li></ul></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MULTIPLE INTELLIGENCES -->
+    <section class="section" id="sec-mi">
+      <h2 class="section-heading"><span class="icon">🌈</span> Multiple Intelligences</h2>
+      <div class="theory-card theory-color-7" id="card-mi">
+        <div class="theory-card-header" onclick="toggleCard('card-mi')">
+          <div class="theory-icon">🌈</div>
+          <div><h3>Multiple Intelligences — Howard Gardner (1983)</h3><p>Intelligence is not singular but encompasses diverse, distinct capacities of human potential</p></div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'mi','overview')">Overview</button>
+              <button class="tab-btn" onclick="switchTab(this,'mi','types')">9 Intelligences</button>
+              <button class="tab-btn" onclick="switchTab(this,'mi','methods')">Methods</button>
+              <button class="tab-btn" onclick="switchTab(this,'mi','islamic')">Islamic Application</button>
+              <button class="tab-btn" onclick="switchTab(this,'mi','critique')">Critique & Islamic View</button>
+            </div>
+            <div id="mi-overview" class="tab-panel active">
+              <p class="text-xs text-muted">Howard Gardner (1983) in "Frames of Mind" challenged the traditional IQ-centric view of intelligence. He proposed that humans possess multiple distinct intelligences, each representing a different mode of processing information. Every individual has a unique profile of strengths across these intelligences.</p>
+              <div class="callout callout-blue">
+                <strong>🧠 In Simple Words</strong>
+                <p>Gardner says: "Being 'smart' isn't just about math and language. You can be intelligent in music, movement, nature, relationships, or self-awareness. Every student has strengths — the teacher's job is to FIND and USE those strengths in learning."</p>
+              </div>
+            </div>
+            <div id="mi-types" class="tab-panel">
+              <div class="grid-3">
+                <div class="info-card"><h5>📖 Linguistic</h5><p>Reading, writing, storytelling, memorizing words. Strong in: Quran memorization, essay writing, debate.</p></div>
+                <div class="info-card"><h5>🔢 Logical-Mathematical</h5><p>Reasoning, problem-solving, patterns. Strong in: Fiqh reasoning (qiyas), mathematical jurisprudence.</p></div>
+                <div class="info-card"><h5>🎨 Spatial-Visual</h5><p>Thinking in images, navigation, art. Strong in: Islamic geometric art, architectural design.</p></div>
+                <div class="info-card"><h5>🎵 Musical</h5><p>Rhythm, melody, pitch. Strong in: Quran tajweed, nasheeds, Islamic chanting.</p></div>
+                <div class="info-card"><h5>🤸 Bodily-Kinesthetic</h5><p>Movement, physical coordination. Strong in: Prayer (solat) movements, wudu practice.</p></div>
+                <div class="info-card"><h5>🤝 Interpersonal</h5><p>Understanding people, social interaction. Strong in: Islamic community leadership (shura), dawah.</p></div>
+                <div class="info-card"><h5>🧘 Intrapersonal</h5><p>Self-awareness, emotional intelligence. Strong in: Muhasabah, spiritual development, tasawwuf.</p></div>
+                <div class="info-card"><h5>🌿 Naturalist</h5><p>Nature observation, environmental sensitivity. Strong in: Quranic reflections on creation (ayat kawniyyah).</p></div>
+                <div class="info-card"><h5>✨ Existential</h5><p>Philosophical questioning, meaning-making. Strong in: 'Aqeedah studies, purpose of life (maqasid).</p></div>
+              </div>
+            </div>
+            <div id="mi-methods" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>Differentiated Instruction</h5><p>Designing activities across multiple intelligence modes — every student accesses the same content through their strongest intelligence.</p></div>
+                <div class="info-card"><h5>Learning Stations</h5><p>Multiple activity stations each targeting a different intelligence — students rotate through their preferred and challenging modes.</p></div>
+                <div class="info-card"><h5>Project-Based Assessment</h5><p>Students demonstrate knowledge through their intelligence strengths — podcast, artwork, physical demonstration, journal, or debate.</p></div>
+                <div class="info-card"><h5>Flexible Grouping</h5><p>Grouping students by intelligence strengths and mixing groups to allow peer learning across intelligence domains.</p></div>
+              </div>
+            </div>
+            <div id="mi-islamic" class="tab-panel">
+              <div class="callout callout-green">
+                <strong>🌙 Multiple Intelligences and Islamic Fitrah</strong>
+                <p>Gardner's MI theory deeply resonates with the Islamic concept of <strong>fitrah</strong> — every human is born with unique capacities and potential given by Allah. The Quran and Sunnah address humans through multiple modes: linguistic (verses), visual (natural signs), kinesthetic (ibadah), interpersonal (community), and existential (purpose of life). The concept of <strong>insan kamil</strong> requires developing ALL aspects of human potential — not just IQ.</p>
+              </div>
+              <div class="grid-2 mt-1">
+                <div class="info-card"><h5>MI in Quranic Teaching</h5><p>The Prophet ﷺ used stories (linguistic), natural phenomena (naturalist), social situations (interpersonal), and physical acts of worship (kinesthetic) — applying all intelligences in teaching Islam.</p></div>
+                <div class="info-card"><h5>Huffaz Intelligence (Islamic MI Application)</h5><p>Research has shown that successful Quran memorizers use multiple intelligences: linguistic, musical (tajweed), bodily-kinesthetic (rocking), and intrapersonal (spiritual motivation).</p></div>
+              </div>
+            </div>
+            <div id="mi-critique" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>✅ Strong Resonance</h5><ul><li>Fitrah (unique human potential) mirrors the diversity of intelligences</li><li>Islamic education traditionally addressed multiple modes of learning</li><li>Prophet's ﷺ pedagogical methods utilized multiple intelligences naturally</li><li>Insan kamil requires holistic development across all intelligences</li></ul></div>
+                <div class="info-card"><h5>⚠️ Critique</h5><ul><li>Scientific criticism: Gardner's theory lacks empirical neurological validation as "separate intelligences"</li><li>Conflates intelligence with talent/aptitude — Islamic education doesn't limit learning to individual strengths</li><li>The existential intelligence particularly resonates with Islamic aqeedah studies</li><li>Islamic view adds a 10th dimension: 'Aql al-Ruh (Spiritual Intelligence) — awareness of Allah and purpose</li></ul></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL LEARNING -->
+    <section class="section" id="sec-social">
+      <h2 class="section-heading"><span class="icon">👥</span> Social Learning Theory (Bandura)</h2>
+      <div class="theory-card theory-color-8" id="card-social">
+        <div class="theory-card-header" onclick="toggleCard('card-social')">
+          <div class="theory-icon">👥</div>
+          <div><h3>Social Learning Theory — Albert Bandura (1977)</h3><p>Learning through observation, modeling, and social interaction — the Bobo Doll experiments</p></div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'social','overview')">Overview</button>
+              <button class="tab-btn" onclick="switchTab(this,'social','keyconcepts')">Key Concepts</button>
+              <button class="tab-btn" onclick="switchTab(this,'social','methods')">Methods</button>
+              <button class="tab-btn" onclick="switchTab(this,'social','islamic')">Islamic Application</button>
+              <button class="tab-btn" onclick="switchTab(this,'social','critique')">Critique & Islamic View</button>
+            </div>
+            <div id="social-overview" class="tab-panel active">
+              <p class="text-xs text-muted">Albert Bandura's Social Learning Theory bridges behaviorism and cognitivism. People learn not only through direct experience (behaviorism) but also through <em>observation</em> of others (modeling). Bandura demonstrated this through his famous Bobo Doll experiments (1963). Later evolved into Social Cognitive Theory — emphasizing self-efficacy and triadic reciprocal determinism (person ↔ behavior ↔ environment).</p>
+              <div class="callout callout-blue">
+                <strong>🧠 In Simple Words</strong>
+                <p>Bandura says: "You learn by WATCHING others. If a child sees someone rewarded for behavior, they imitate it. If punished, they avoid it. Your beliefs about your own ability (self-efficacy) greatly determine what you attempt and how hard you try."</p>
+              </div>
+              <div class="diagram-container">
+                <div class="diagram-title">Observational Learning Process (Bandura, 1977)</div>
+                <div class="flow">
+                  <div class="flow-step highlight">Attention<br><small>Notice the model</small></div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step">Retention<br><small>Remember behavior</small></div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step">Reproduction<br><small>Ability to replicate</small></div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step highlight">Motivation<br><small>Incentive to perform</small></div>
+                </div>
+              </div>
+            </div>
+            <div id="social-keyconcepts" class="tab-panel">
+              <div class="tags-wrap">
+                <span class="key-concept-tag">🔑 Observational Learning</span>
+                <span class="key-concept-tag">🔑 Modeling</span>
+                <span class="key-concept-tag">🔑 Self-Efficacy</span>
+                <span class="key-concept-tag">🔑 Vicarious Reinforcement</span>
+                <span class="key-concept-tag">🔑 Triadic Reciprocal Determinism</span>
+                <span class="key-concept-tag">🔑 Role Models</span>
+                <span class="key-concept-tag">🔑 Social Reinforcement</span>
+              </div>
+              <div class="info-card mt-2"><h5>Albert Bandura (1925–2021)</h5><p>Canadian-American psychologist. Bobo Doll experiment proved children imitate observed behaviors even without direct reinforcement. Developed the concept of <strong>self-efficacy</strong> — "I believe I can do this" — as the strongest predictor of academic success. His work bridges behavioral and cognitive theories.</p></div>
+            </div>
+            <div id="social-methods" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>Modeling & Demonstration</h5><p>Teacher demonstrates a skill or behavior — students observe and imitate. Critical for procedural learning (wudu, prayer, lab skills).</p></div>
+                <div class="info-card"><h5>Role Playing</h5><p>Students act out scenarios to practice social behaviors and moral decision-making through active modeling.</p></div>
+                <div class="info-card"><h5>Peer Tutoring</h5><p>Students learn from peer models who are closer in age and ability — reduces the intimidation gap of adult-to-child modeling.</p></div>
+                <div class="info-card"><h5>Case Studies & Stories</h5><p>Learning from the stories of others — vicarious experience without direct consequences. Islamic qisas (Quran stories) apply this powerfully.</p></div>
+              </div>
+            </div>
+            <div id="social-islamic" class="tab-panel">
+              <div class="callout callout-green">
+                <strong>🌙 Uswah Hasanah — The Perfect Islamic Model</strong>
+                <p>Bandura's modeling theory finds its most powerful expression in the Islamic concept of <strong>Uswah Hasanah</strong> (the excellent example of the Prophet ﷺ): <em>"Laqad kana lakum fi rasulillahi uswatun hasanah"</em> — "Indeed in the Messenger of Allah you have an excellent example" (Quran 33:21). The Prophet ﷺ is the ultimate model — observed and imitated across all aspects of life.</p>
+              </div>
+              <div class="grid-2 mt-1">
+                <div class="info-card"><h5>Teacher as Murabbi (Moral Model)</h5><p>In Islamic education, the teacher (murabbi/ustaz) is not just a content deliverer — they are a living model of Islamic character. Students learn character (akhlaq) through observation of the teacher, directly paralleling Bandura's modeling process.</p></div>
+                <div class="info-card"><h5>Quranic Stories as Vicarious Learning</h5><p>The Quran is filled with stories of Prophets (qisas al-anbiya) — these are vicarious learning experiences designed to teach moral behavior through observational modeling: "Indeed, their stories contain a lesson for those of understanding" (12:111).</p></div>
+              </div>
+              <div class="callout callout-brown mt-1">
+                <strong>👨‍🏫 Muslim Scholars</strong>
+                <p><strong>Al-Ghazali</strong> emphasized that the teacher must be a living example (qudwah) before students — students learn character more through observation of their teacher than through textbooks. <strong>Ibn Khaldun</strong> noted that students acquire 'malakah (intellectual dispositions) through extended contact with learned masters — a form of extended observational learning.</p>
+              </div>
+            </div>
+            <div id="social-critique" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>✅ Exceptional Alignment</h5><ul><li>Uswah Hasanah (Prophet ﷺ as perfect model) is the supreme application of modeling theory</li><li>Islamic teacher (murabbi) is a moral model — character is learned through observation</li><li>Quranic qisas (stories) are systematic vicarious learning experiences</li><li>Self-efficacy parallels Islamic concept of tawakkul with asbab (doing one's best)</li></ul></div>
+                <div class="info-card"><h5>⚠️ Enrichment Needed</h5><ul><li>Islamic modeling has divine accountability — not just social reinforcement</li><li>Niyyah (intention) adds depth — Islamic modeling aims at rida'Allah (Allah's pleasure), not just social approval</li><li>Triadic determinism must include the spiritual dimension: Person ↔ Behavior ↔ Environment ↔ Ruh (Soul)</li></ul></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENTIAL LEARNING -->
+    <section class="section" id="sec-exp">
+      <h2 class="section-heading"><span class="icon">🔄</span> Experiential Learning</h2>
+      <div class="theory-card theory-color-9" id="card-exp">
+        <div class="theory-card-header" onclick="toggleCard('card-exp')">
+          <div class="theory-icon">🔄</div>
+          <div><h3>Experiential Learning — David Kolb (1984)</h3><p>Learning is a cyclical process through concrete experience, reflection, conceptualization, and active experimentation</p></div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'exp','overview')">Overview</button>
+              <button class="tab-btn" onclick="switchTab(this,'exp','keyconcepts')">Key Concepts</button>
+              <button class="tab-btn" onclick="switchTab(this,'exp','methods')">Methods</button>
+              <button class="tab-btn" onclick="switchTab(this,'exp','islamic')">Islamic Application</button>
+              <button class="tab-btn" onclick="switchTab(this,'exp','critique')">Critique & Islamic View</button>
+            </div>
+            <div id="exp-overview" class="tab-panel active">
+              <p class="text-xs text-muted">David Kolb's Experiential Learning Theory (1984) builds on Dewey, Piaget, and Lewin. It describes learning as a four-stage cycle: Concrete Experience → Reflective Observation → Abstract Conceptualization → Active Experimentation. Learning happens through transformation of experience — not just passive receipt of information.</p>
+              <div class="callout callout-blue">
+                <strong>🧠 In Simple Words</strong>
+                <p>Kolb says: "Real learning requires a CYCLE of experience and reflection. You do something → think about what happened → understand the principle → try it differently. Learning is a spiral — each cycle builds on the last."</p>
+              </div>
+              <div class="diagram-container">
+                <div class="diagram-title">Kolb's Experiential Learning Cycle (1984)</div>
+                <div class="cycle-container">
+                  <div class="cycle-ring"></div>
+                  <div class="cycle-center">Experiential<br>Learning<br>Cycle</div>
+                  <div class="cycle-node cn-top">🧪 Concrete Experience<br><small>Do it; Feel</small></div>
+                  <div class="cycle-node cn-right">🔍 Reflective Observation<br><small>Watch; Think</small></div>
+                  <div class="cycle-node cn-bottom">💡 Abstract Conceptualization<br><small>Think; Theorize</small></div>
+                  <div class="cycle-node cn-left">⚡ Active Experimentation<br><small>Plan; Apply</small></div>
+                </div>
+              </div>
+            </div>
+            <div id="exp-keyconcepts" class="tab-panel">
+              <div class="tags-wrap">
+                <span class="key-concept-tag">🔑 Concrete Experience</span>
+                <span class="key-concept-tag">🔑 Reflective Observation</span>
+                <span class="key-concept-tag">🔑 Abstract Conceptualization</span>
+                <span class="key-concept-tag">🔑 Active Experimentation</span>
+                <span class="key-concept-tag">🔑 Learning Styles</span>
+                <span class="key-concept-tag">🔑 Experiential Transformation</span>
+                <span class="key-concept-tag">🔑 Spiral Learning</span>
+              </div>
+              <div class="grid-2 mt-2">
+                <div class="info-card"><h5>Four Learning Styles (Kolb)</h5><ul><li><strong>Diverger:</strong> Concrete + Reflective — imaginative, emotional, artistic</li><li><strong>Assimilator:</strong> Abstract + Reflective — logical, theoretical</li><li><strong>Converger:</strong> Abstract + Active — practical, problem-solving</li><li><strong>Accommodator:</strong> Concrete + Active — hands-on, risk-taking</li></ul></div>
+                <div class="info-card"><h5>Key Theorists</h5><ul><li><strong>John Dewey:</strong> "Learning by Doing" — education through democratic experience</li><li><strong>David Kolb:</strong> Formalized 4-stage cycle with learning style inventory</li><li><strong>Kurt Lewin:</strong> Action research and group dynamics — experience-based change</li></ul></div>
+              </div>
+            </div>
+            <div id="exp-methods" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>Field Trips & Service Learning</h5><p>Real-world experiences provide concrete learning encounters that spark the cycle.</p></div>
+                <div class="info-card"><h5>Simulation & Role Play</h5><p>Simulated real-world scenarios for safe experiential learning — particularly effective in medical and leadership education.</p></div>
+                <div class="info-card"><h5>Reflective Practice</h5><p>Structured reflection after experiences (journals, portfolios) — moves through the Reflective Observation stage.</p></div>
+                <div class="info-card"><h5>Apprenticeship & Internship</h5><p>Extended real-world practice under expert guidance — moves through all four stages with authentic tasks.</p></div>
+              </div>
+            </div>
+            <div id="exp-islamic" class="tab-panel">
+              <div class="callout callout-green">
+                <strong>🌙 Islamic Experiential Learning: 'Ilm and 'Amal Cycle</strong>
+                <p>The Islamic learning cycle is: <strong>Ta'allum (Learning) → Tafakkur (Reflection) → Tafaquh (Deep Understanding) → 'Amal (Action)</strong>. This mirrors Kolb's cycle but adds a spiritual dimension — experience must be grounded in tawhid and directed toward ibadah. The Quran constantly invites reflection on experience: <em>"Afalam yasiru fil ard"</em> — "Have they not traveled through the earth and seen?" (12:109)</p>
+              </div>
+              <div class="grid-2 mt-1">
+                <div class="info-card"><h5>Hajj as Experiential Education</h5><p>The Hajj pilgrimage is the ultimate Islamic experiential learning event — concrete physical experience → spiritual reflection → theological conceptualization → lifetime behavioral transformation. A perfect 4-stage Kolbian cycle.</p></div>
+                <div class="info-card"><h5>Islamic Historical Method</h5><p>Ibn Khaldun's methodology in Muqaddimah — learning from historical experience, reflecting on patterns of civilizations, and forming theoretical principles — is experiential learning applied to scholarship.</p></div>
+              </div>
+            </div>
+            <div id="exp-critique" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>✅ Strong Resonance</h5><ul><li>Islam's emphasis on 'amal (action) aligns with active experimentation</li><li>Tafakkur and tadabbur mirror reflective observation</li><li>Ibn Khaldun's empirical-historical method is experiential learning in scholarship</li><li>Hajj and other Islamic rituals are structured experiential learning events</li></ul></div>
+                <div class="info-card"><h5>⚠️ Islamic Enrichment</h5><ul><li>Kolb's cycle begins with human experience — Islamic experiential learning includes wahi (revelation) as a source of experience beyond human encounter</li><li>The goal of reflection in Islam is always ma'rifatullah (knowing Allah) — not just constructing personal knowledge</li><li>Islamic experiential learning has an eschatological dimension — learning prepares for both dunya and akhirah</li></ul></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANDRAGOGY -->
+    <section class="section" id="sec-andra">
+      <h2 class="section-heading"><span class="icon">🎓</span> Andragogy</h2>
+      <div class="theory-card theory-color-10" id="card-andra">
+        <div class="theory-card-header" onclick="toggleCard('card-andra')">
+          <div class="theory-icon">🎓</div>
+          <div><h3>Andragogy — Malcolm Knowles (1968)</h3><p>The art and science of helping adults learn — adult learning theory that contrasts with pedagogy</p></div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'andra','overview')">Overview</button>
+              <button class="tab-btn" onclick="switchTab(this,'andra','keyconcepts')">6 Assumptions</button>
+              <button class="tab-btn" onclick="switchTab(this,'andra','methods')">Methods</button>
+              <button class="tab-btn" onclick="switchTab(this,'andra','islamic')">Islamic Application</button>
+              <button class="tab-btn" onclick="switchTab(this,'andra','critique')">Critique & Islamic View</button>
+            </div>
+            <div id="andra-overview" class="tab-panel active">
+              <p class="text-xs text-muted">Malcolm Knowles coined "andragogy" (from Greek <em>aner</em> = man/adult, <em>agogos</em> = leading) in 1968, contrasting it with <em>pedagogy</em> (child-leading). He argued that adults learn fundamentally differently from children — they are self-directed, experience-rich, relevance-focused, and intrinsically motivated. Andragogy has become the foundation of adult and continuing education worldwide.</p>
+              <div class="callout callout-blue">
+                <strong>🧠 In Simple Words</strong>
+                <p>Andragogy says: "Adults are NOT big children. They learn best when they understand WHY they need to learn, when learning connects to their life experience, and when they have a say in what and how they learn. Adults are self-directed, purpose-driven, and motivated by real-world relevance."</p>
+              </div>
+              <div class="compare-table" style="margin:1rem 0;">
+                <table class="compare-table">
+                  <thead><tr><th>Aspect</th><th>Pedagogy (Child)</th><th>Andragogy (Adult)</th></tr></thead>
+                  <tbody>
+                    <tr><td class="col-theory">Learner Role</td><td>Dependent on teacher</td><td>Self-directed, autonomous</td></tr>
+                    <tr><td class="col-theory">Experience</td><td>Little experience; teacher fills</td><td>Rich experience as a learning resource</td></tr>
+                    <tr><td class="col-theory">Readiness</td><td>Age/developmental stage</td><td>Real-life problem relevance</td></tr>
+                    <tr><td class="col-theory">Motivation</td><td>External (grades, approval)</td><td>Internal (growth, purpose, relevance)</td></tr>
+                    <tr><td class="col-theory">Content Focus</td><td>Subject-centered</td><td>Problem/task-centered</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="andra-keyconcepts" class="tab-panel">
+              <h3 class="sub-heading">Knowles' 6 Assumptions of Adult Learners</h3>
+              <div class="grid-2">
+                <div class="info-card"><h5>1. Self-Concept</h5><p>Adults see themselves as self-directed. They need autonomy and control over their learning process.</p></div>
+                <div class="info-card"><h5>2. Experience</h5><p>Adult life experience is a rich resource. New learning must connect to and build on what they already know.</p></div>
+                <div class="info-card"><h5>3. Readiness to Learn</h5><p>Adults learn what is relevant to their current life roles and responsibilities — just-in-time learning.</p></div>
+                <div class="info-card"><h5>4. Orientation to Learning</h5><p>Problem-centered rather than subject-centered. Adults want practical, applicable knowledge.</p></div>
+                <div class="info-card"><h5>5. Motivation</h5><p>Primarily intrinsic — job satisfaction, personal growth, quality of life — rather than external grades.</p></div>
+                <div class="info-card"><h5>6. Need to Know</h5><p>Adults need to understand WHY they should learn something before investing time and effort in learning it.</p></div>
+              </div>
+            </div>
+            <div id="andra-methods" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>Case Studies & Problem-Solving</h5><p>Real-world scenarios relevant to adults' professional and personal lives — immediately applicable learning.</p></div>
+                <div class="info-card"><h5>Self-Directed Learning Contracts</h5><p>Adults negotiate their learning objectives, resources, and evaluation criteria — maximum autonomy.</p></div>
+                <div class="info-card"><h5>Experience Sharing & Discussion</h5><p>Drawing on participants' life experiences as teaching material — each learner is also a teacher.</p></div>
+                <div class="info-card"><h5>Mentoring & Coaching</h5><p>One-on-one guidance that connects new learning to the learner's specific context and goals.</p></div>
+              </div>
+            </div>
+            <div id="andra-islamic" class="tab-panel">
+              <div class="callout callout-green">
+                <strong>🌙 Andragogy in Islamic Educational Tradition</strong>
+                <p>Islamic education has always valued <strong>lifelong learning</strong> (thalab al-'ilm min al-mahd ila al-lahd — from cradle to grave). The Prophet ﷺ taught companions who were adults — respecting their experiences and addressing their real-life situations. Islamic scholarly tradition (talaqqi, halaqah at mosques) embodies andragogical principles: voluntary attendance, self-direction, experience-based inquiry.</p>
+              </div>
+              <div class="grid-2 mt-1">
+                <div class="info-card"><h5>Halaqah and Masjid Education</h5><p>Traditional mosque learning circles are adult-learner centered — students come voluntarily, motivated by genuine desire to know Allah. The teacher facilitates rather than directs, responding to questions and contexts of the learners.</p></div>
+                <div class="info-card"><h5>Ijtihad as Self-Directed Learning</h5><p>Qualified scholars engaging in ijtihad (independent legal reasoning) is the epitome of andragogy — self-directed, experience-rich, problem-centered learning to find solutions to new situations.</p></div>
+              </div>
+              <div class="callout callout-brown mt-1">
+                <strong>👨‍🏫 Muslim Scholars</strong>
+                <p><strong>Ibn Khaldun</strong> described mature scholars as self-directed learners who guide their own intellectual development. His method in Muqaddimah reflects adult andragogical inquiry. <strong>Al-Ghazali</strong> wrote differently for different audiences — recognizing that adults at different life stages need different approaches (stages of spiritual development from beginner to advanced).</p>
+              </div>
+            </div>
+            <div id="andra-critique" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>✅ Strong Alignment</h5><ul><li>Islamic tradition values lifelong learning as religious obligation</li><li>Voluntary learning in halaqah mirrors andragogical self-direction</li><li>Problem-centered learning aligns with fiqh (Islamic jurisprudence) — real-world questions drive learning</li><li>Intrinsic motivation aligns with Islamic ikhlas (sincere learning for Allah)</li></ul></div>
+                <div class="info-card"><h5>⚠️ Tension Points</h5><ul><li>Complete autonomy can contradict Islamic adab (respect for teacher's authority in traditional learning)</li><li>Islamic learning includes fard 'ayn (individually obligatory knowledge) — not all learning is voluntary/self-directed</li><li>The teacher-student relationship in Islam involves more authority structure than andragogy proposes</li></ul></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- ISLAMIC TRADITION METHODS -->
+    <section class="section" id="sec-trad">
+      <h2 class="section-heading"><span class="icon">🕌</span> Islamic Tradition Methods of Learning</h2>
+      <p class="section-intro">The Islamic scholarly tradition developed sophisticated methods of learning and knowledge transmission over 1400 years. These methods are not merely historical — they represent a refined pedagogical system rooted in the nature of knowledge ('ilm), the sanctity of transmission (isnad), and the goal of spiritual and intellectual excellence.</p>
+
+      <h3 class="sub-heading">📡 Methods of Transmission and Learning</h3>
+      <div class="grid-2">
+        <div class="theory-card theory-color-1" style="margin-bottom:1rem;" id="card-talaqqi">
+          <div class="theory-card-header" onclick="toggleCard('card-talaqqi')">
+            <div class="theory-icon">🗣️</div>
+            <div><h3>Talaqqi (Direct Transmission)</h3><p>Face-to-face reception of knowledge from teacher to student — the foundational method of Islamic learning</p></div>
+            <div class="theory-toggle">▼</div>
+          </div>
+          <div class="theory-body">
+            <div class="theory-body-inner">
+              <p class="text-xs text-muted"><strong>Talaqqi</strong> (from Arabic: receiving/meeting) is the traditional method of learning directly from a teacher in a face-to-face setting. The student literally "meets" the teacher's knowledge. <strong>Talaqqi Musyafahah</strong> specifically refers to lip-to-ear transmission — most critical for Quran recitation to ensure correct pronunciation (makhraj) and application of tajweed rules.</p>
+              <div class="callout callout-green">
+                <strong>🌙 Educational Psychology Analysis</strong>
+                <p>Talaqqi embodies multiple learning theories simultaneously: Bandura's modeling (teacher demonstrates), Vygotsky's ZPD (teacher scaffolds the gap), and metacognitive feedback (immediate correction of errors). The sanad (chain of transmission) creates authenticated knowledge networks — connecting the student to the Prophet ﷺ through verified scholars.</p>
+              </div>
+              <div class="grid-2 mt-1">
+                <div class="info-card"><h5>Talaqqi in Modern Context</h5><p>From pondok and pesantren traditions in Malaysia and Indonesia to global online Islamic learning platforms — talaqqi adapts while maintaining its core: direct transmission with verified authority.</p></div>
+                <div class="info-card"><h5>Psychological Dimensions</h5><p>The intimate teacher-student relationship in talaqqi creates emotional attachment to knowledge, fosters respect (adab), and ensures contextual accuracy that text-based learning cannot provide.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="theory-card theory-color-2" style="margin-bottom:1rem;" id="card-turath">
+          <div class="theory-card-header" onclick="toggleCard('card-turath')">
+            <div class="theory-icon">📜</div>
+            <div><h3>Turath (Preserving Classical Heritage)</h3><p>The tradition of preserving and transmitting the Islamic scholarly heritage through authentic chains</p></div>
+            <div class="theory-toggle">▼</div>
+          </div>
+          <div class="theory-body">
+            <div class="theory-body-inner">
+              <p class="text-xs text-muted"><strong>Turath</strong> (Arabic: heritage/legacy) refers to the classical Islamic scholarly tradition — the accumulated writings, commentaries, and rulings of generations of scholars. Preserving turath means maintaining living connection to this heritage through both written texts and oral transmission.</p>
+              <div class="callout callout-gold">
+                <strong>📚 Turath as Connectivist Knowledge Network</strong>
+                <p>The turath represents a distributed knowledge network spanning 1400+ years — earlier scholars are "nodes" connected through chains of commentary and transmission. Every kitab (book) studied is connected to its author, who is connected to their teachers, creating an authenticated intellectual genealogy back to the Sahabah and the Prophet ﷺ.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-heading">✍️ Methods of Islamic Writing and Scholarship</h3>
+      <div class="grid-3">
+        <div class="info-card">
+          <h5>📖 Matan</h5>
+          <p>The core text — brief, dense, authoritative statements of ruling or doctrine. Examples: Matn al-Ajurumiyyah, Matan al-Arba'in al-Nawawiyyah. Students memorize the matan as the kernel of a subject.</p>
+        </div>
+        <div class="info-card">
+          <h5>💬 Syarah (Commentary)</h5>
+          <p>Detailed explanation and elaboration of the matan. The author of syarah unpacks meaning, provides evidence, explains rulings, and gives examples. Example: Fath al-Bari (syarah of Sahih Bukhari). Promotes deep comprehension over rote memorization.</p>
+        </div>
+        <div class="info-card">
+          <h5>📝 Hasyiah (Super-Commentary)</h5>
+          <p>Commentary on the commentary (syarah). Provides additional scholarly discussion, debates between scholars, and refinement of points raised in the syarah. Represents the highest level of traditional scholarly engagement.</p>
+        </div>
+        <div class="info-card">
+          <h5>🔖 Ta'liq (Annotation)</h5>
+          <p>Brief scholarly notes on specific points in a text — clarifying difficult passages, correcting errors, or adding supplementary information. More concise and targeted than full syarah.</p>
+        </div>
+        <div class="info-card">
+          <h5>⚔️ Kitab al-Radd (Refutation)</h5>
+          <p>Systematic scholarly refutation of incorrect positions — represents the tradition of critical discourse and intellectual defense. Examples: Ibn Taymiyyah's many radd works. Promotes analytical and critical thinking in Islamic scholarship.</p>
+        </div>
+        <div class="info-card">
+          <h5>🧩 Dialogic Writing</h5>
+          <p>Question-and-answer format (su'al wa jawab) and debate (munazarah) — a dialogic tradition that parallels Socratic method in fostering critical reasoning through structured intellectual exchange.</p>
+        </div>
+      </div>
+
+      <div class="diagram-container mt-2">
+        <div class="diagram-title">Islamic Scholarly Writing Hierarchy</div>
+        <div class="pyramid-wrap">
+          <div class="pyramid-level p6">📜 Matan — Core Text (Foundation)</div>
+          <div class="pyramid-level p5">💬 Syarah — Commentary (Explanation)</div>
+          <div class="pyramid-level p4">📝 Hasyiah — Super-Commentary (Elaboration)</div>
+          <div class="pyramid-level p3">🔖 Ta'liq — Annotation (Clarification)</div>
+          <div class="pyramid-level p2">⚔️ Kitab al-Radd — Refutation (Critical Discourse)</div>
+          <div class="pyramid-level p1" style="width:100%">🎓 Living Transmission via Talaqqi — The Chain That Authenticates All Layers</div>
+        </div>
+      </div>
+
+      <h3 class="sub-heading">📚 Methods of Islamic Learning Practice</h3>
+      <div class="grid-2">
+        <div class="info-card"><h5>🎓 Ta'lim (Teaching/Learning)</h5><p>The formal transmission of knowledge from teacher to student. Encompasses all modes of instruction from lecture (dars) to halaqah. The most general term for Islamic education — covers both structured classroom and informal settings.</p></div>
+        <div class="info-card"><h5>📖 Mutala'ah (Self-Study/Research)</h5><p>Independent reading, research, and study of texts. The student engages with books outside the teacher's presence — developing personal understanding and research skills. Parallels self-directed learning and constructivist independent inquiry.</p></div>
+        <div class="info-card"><h5>🔁 Murajaah (Review/Revision)</h5><p>Systematic review of previously learned material. Essential in tahfiz (Quran memorization) and all traditional Islamic learning. Neurologically, murajaah is evidence-based spaced repetition — one of the most powerful metacognitive strategies for long-term retention.</p></div>
+        <div class="info-card"><h5>🤝 Muzakarah (Discussion)</h5><p>Scholarly discussion between peers or between student and teacher. Verifying understanding, debating interpretations, and refining knowledge through dialogue. Parallels Vygotsky's social constructivism — knowledge is co-constructed through guided discourse.</p></div>
+        <div class="info-card"><h5>📋 Tahdir/Tahdeer (Preparation)</h5><p>Pre-lesson preparation — students prepare texts and questions before meeting the teacher. Develops active learning habits and ensures productive use of teacher-time. Parallels andragogical self-direction and metacognitive planning.</p></div>
+        <div class="info-card"><h5>✍️ Kitabah (Writing)</h5><p>The practice of writing down knowledge to aid retention and transmission. Students copy texts, write notes (ta'liqat), and compose their own works. "Qayyid al-'ilm bi al-kitabah" — "Chain knowledge through writing" (traditional maxim). Parallels cognitive encoding through elaboration.</p></div>
+      </div>
+
+      <div class="diagram-container mt-2">
+        <div class="diagram-title">Islamic Learning Methods Mindmap</div>
+        <div class="mindmap">
+          <div class="mindmap-center">Islamic Learning Methods</div>
+          <div class="mindmap-branches">
+            <div class="mindmap-branch"><div class="branch-label">📡 Talaqqi</div><div class="branch-sub">Face-to-face transmission with teacher</div></div>
+            <div class="mindmap-branch"><div class="branch-label">📖 Mutala'ah</div><div class="branch-sub">Independent self-study of texts</div></div>
+            <div class="mindmap-branch"><div class="branch-label">🔁 Murajaah</div><div class="branch-sub">Systematic revision and review</div></div>
+            <div class="mindmap-branch"><div class="branch-label">🤝 Muzakarah</div><div class="branch-sub">Scholarly peer discussion</div></div>
+            <div class="mindmap-branch"><div class="branch-label">📋 Tahdir</div><div class="branch-sub">Pre-study preparation</div></div>
+            <div class="mindmap-branch"><div class="branch-label">✍️ Kitabah</div><div class="branch-sub">Writing to preserve knowledge</div></div>
+            <div class="mindmap-branch"><div class="branch-label">💬 Syarah</div><div class="branch-sub">Textual commentary method</div></div>
+            <div class="mindmap-branch"><div class="branch-label">📜 Turath</div><div class="branch-sub">Preserving classical heritage</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- MANTIQ -->
+    <section class="section" id="sec-mantiq">
+      <h2 class="section-heading"><span class="icon">⚖️</span> Mantiq & Islamic Epistemology</h2>
+      <p class="section-intro">Mantiq (Islamic Logic) is not merely a formal discipline — it provides the epistemological framework through which Islam understands how humans know, perceive, and validate knowledge. It is the Islamic theory of learning at its most foundational level.</p>
+
+      <div class="theory-card theory-color-11" id="card-mantiq">
+        <div class="theory-card-header" onclick="toggleCard('card-mantiq')">
+          <div class="theory-icon">⚖️</div>
+          <div><h3>Mantiq — Islamic Logic & Theory of Knowledge</h3><p>The systematic study of how the human mind perceives, processes, and validates knowledge — Islamic cognitive epistemology</p></div>
+          <div class="theory-toggle">▼</div>
+        </div>
+        <div class="theory-body">
+          <div class="theory-body-inner">
+            <div class="tab-nav">
+              <button class="tab-btn active" onclick="switchTab(this,'mant','overview')">What is Mantiq?</button>
+              <button class="tab-btn" onclick="switchTab(this,'mant','tasawwur')">Tasawwur & Tasdiq</button>
+              <button class="tab-btn" onclick="switchTab(this,'mant','epistemology')">Islamic Epistemology</button>
+              <button class="tab-btn" onclick="switchTab(this,'mant','scholars')">Key Scholars</button>
+            </div>
+            <div id="mant-overview" class="tab-panel active">
+              <div class="quote-block">
+                <p class="arabic">آلة قانونية تعصم مراعاتها الذهن عن الخطأ في الفكر</p>
+                <cite>"A systematic methodology protecting the mind from error in thinking" — Definition of Mantiq</cite>
+              </div>
+              <p class="text-xs text-muted">Mantiq (Arabic: logic/speech) in the Islamic tradition refers to the formal study of correct thinking — the tools by which the mind distinguishes truth from falsehood, valid from invalid reasoning. Islamic mantiq was profoundly influenced by Aristotelian logic but was adapted, refined, and Islamized by scholars like Al-Farabi, Ibn Sina, and Al-Ghazali.</p>
+              <div class="callout callout-blue">
+                <strong>🧠 Mantiq and Learning Theory</strong>
+                <p>Mantiq provides the Islamic cognitive framework for how learning happens: the mind encounters reality through the senses, forms mental representations (tasawwur), then makes judgments about these representations (tasdiq). This two-stage process underlies ALL Islamic learning — from Quranic comprehension to fiqh reasoning. Mantiq is effectively Islam's cognitive theory of learning.</p>
+              </div>
+            </div>
+            <div id="mant-tasawwur" class="tab-panel">
+              <h3 class="sub-heading">Tasawwur and Tasdiq — The Two Stages of Human Knowledge</h3>
+              <div class="grid-2">
+                <div class="info-card">
+                  <h5>🔵 Tasawwur (Conception/Apprehension)</h5>
+                  <p>The first stage of knowledge — the mind forms a mental concept or image of an object WITHOUT making any judgment about it. Pure conceptual knowledge.</p>
+                  <ul class="mt-1">
+                    <li>No truth/falsity judgment yet — purely definitional</li>
+                    <li>Achieved through: definition (ta'rif) and description (rasm)</li>
+                    <li>Example: Understanding what "prayer (salah)" IS, without judging if it is obligatory</li>
+                    <li>Produces: Conceptual Knowledge (ma'rifah tasawwuriyyah)</li>
+                  </ul>
+                </div>
+                <div class="info-card">
+                  <h5>🟢 Tasdiq (Assent/Affirmation)</h5>
+                  <p>The second stage — the mind makes a JUDGMENT about the relationship between two concepts (subject and predicate). Truth/falsity can now be assessed.</p>
+                  <ul class="mt-1">
+                    <li>Involves judgment: "Salah is obligatory (wajib)"</li>
+                    <li>Achieved through: argument (hujjah) and proof (burhan)</li>
+                    <li>Can be true (haqq) or false (batil)</li>
+                    <li>Produces: Propositional Knowledge (ma'rifah tasdiqiyyah)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="diagram-container">
+                <div class="diagram-title">Tasawwur → Tasdiq: The Islamic Knowledge Formation Process</div>
+                <div class="flow">
+                  <div class="flow-step highlight">Sensory Input<br><small>Perception of reality</small></div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step">Tasawwur<br><small>Form concept (no judgment)</small></div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step highlight">Tasdiq<br><small>Affirm/deny relationship</small></div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-step">'Ilm Yaqini<br><small>Certain knowledge</small></div>
+                </div>
+              </div>
+              <div class="callout callout-green mt-2">
+                <strong>🌙 Pedagogical Implication</strong>
+                <p>The tasawwur-tasdiq framework directly implies a two-stage teaching approach: (1) First ensure students understand WHAT something is (tasawwur) before asking them to evaluate or apply it; (2) Then guide them to form correct judgments (tasdiq) using evidence. This mirrors Bloom's Taxonomy (Knowledge → Application) but with the added Islamic dimension of revealed certainty as the highest form of tasdiq.</p>
+              </div>
+            </div>
+            <div id="mant-epistemology" class="tab-panel">
+              <h3 class="sub-heading">Sources of Knowledge in Islamic Epistemology</h3>
+              <div class="grid-3">
+                <div class="info-card"><h5>1. Wahy (Revelation)</h5><p>The highest and most certain source of knowledge — the Quran and authenticated Sunnah. Produces 'ilm yaqini (certain knowledge). Beyond human verification but accepted through rational examination of its miraculous nature.</p></div>
+                <div class="info-card"><h5>2. 'Aql (Reason/Intellect)</h5><p>Human rational faculty — the tool of mantiq. Used for derivation, analogy (qiyas), and independent reasoning (ijtihad). Valued in Islam but subordinate to wahy when both are available.</p></div>
+                <div class="info-card"><h5>3. Hawas (Senses)</h5><p>Sensory experience — the foundation of empirical knowledge. Quran repeatedly invites observation of natural signs (ayat kawniyyah). However, senses can be deceived — require 'aql to interpret correctly.</p></div>
+                <div class="info-card"><h5>4. Khabar (Transmitted Knowledge)</h5><p>Knowledge received through trustworthy transmission — hadith, historical reports, scholarly consensus (ijma'). The science of isnad validates the trustworthiness of narrators (rijal).</p></div>
+                <div class="info-card"><h5>5. Kashf (Spiritual Unveiling)</h5><p>'Ilm al-ladunni — knowledge gifted by Allah to purified hearts (Sufic tradition, al-Ghazali). Not universally accepted but represents the spiritual dimension of Islamic epistemology.</p></div>
+                <div class="info-card"><h5>6. Fitrah (Innate Knowledge)</h5><p>Primordial knowledge of Allah's existence embedded in human nature — the source of universal moral intuitions. Corrupted by environment but never fully erased.</p></div>
+              </div>
+              <div class="diagram-container mt-2">
+                <div class="diagram-title">Islamic Epistemological Hierarchy</div>
+                <div class="pyramid-wrap">
+                  <div class="pyramid-level p6">Wahy (Revelation) — Most Certain: Qur'an & Sunnah</div>
+                  <div class="pyramid-level p5">Ijma' (Scholarly Consensus) — Collective Certainty</div>
+                  <div class="pyramid-level p4">Qiyas (Analogical Reasoning) — Derived Certainty</div>
+                  <div class="pyramid-level p3">'Aql + Khabar — Rational-Empirical Knowledge</div>
+                  <div class="pyramid-level p2">Hawas (Senses) — Observable Experience</div>
+                  <div class="pyramid-level p1" style="width:100%">Fitrah (Innate Disposition) — Foundation of All Human Knowledge-Seeking</div>
+                </div>
+              </div>
+            </div>
+            <div id="mant-scholars" class="tab-panel">
+              <div class="grid-2">
+                <div class="info-card"><h5>Al-Farabi (872–950) — "The Second Teacher"</h5><p>After Aristotle. Synthesized Islamic theology with Aristotelian logic. Understood mantiq as a tool (alah) for correct thinking. Described the Active Intellect (al-aql al-fa'al) as the source from which human intellects draw knowledge — a sophisticated cognitive epistemology.</p></div>
+                <div class="info-card"><h5>Ibn Sina / Avicenna (980–1037)</h5><p>Refined the tasawwur/tasdiq framework. His "Floating Man" thought experiment (mind can know itself independent of senses) anticipates Descartes by 600 years. Distinguished levels of intellect: material, habitual, actual, acquired — a cognitive developmental theory.</p></div>
+                <div class="info-card"><h5>Al-Ghazali (1058–1111)</h5><p>Critiqued and limited mantiq in Tahafut al-Falasifah. In Ihya' Ulum al-Din, described the heart (qalb) as the seat of higher knowledge — spiritual cognition beyond rational mantiq. Provided the most complete Islamic theory of the stages of learning: from sensory to rational to spiritual knowledge.</p></div>
+                <div class="info-card"><h5>Ibn Rushd / Averroes (1126–1198)</h5><p>Defended Aristotelian logic against al-Ghazali's critique. His commentaries on Aristotle transmitted Greek philosophy to medieval Europe. Maintained that reason (mantiq) and revelation are compatible — complementary paths to truth.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- COMPARATIVE TABLE -->
+    <section class="section" id="sec-comparison">
+      <h2 class="section-heading"><span class="icon">📊</span> Comparative Overview</h2>
+      <p class="section-intro">A systematic comparison of all learning theories reviewed, evaluated through the lens of Islamic Educational Psychology and the insan kamil framework.</p>
+      <div class="diagram-container">
+        <div class="diagram-title">Learning Theories — Islamic Educational Psychology Analysis</div>
+        <div style="overflow-x:auto;">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Theory</th>
+                <th>Core View of Learning</th>
+                <th>Islamic Parallel</th>
+                <th>Key Agreement</th>
+                <th>Main Limitation</th>
+                <th>Insan Kamil Contribution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="col-theory">⚡ Behaviorism</td><td>Observable behavior change</td><td>Habit formation (Adat), Tikrar</td><td>Istiqamah, Repetition in worship</td><td>Ignores ruh/soul dimension</td><td>Behavioral (Jasad) dimension</td></tr>
+              <tr><td class="col-theory">🧠 Cognitivism</td><td>Mental information processing</td><td>'Aql, Tafakkur, Tadabbur</td><td>Intellect valued in Islam</td><td>Mechanistic; ignores spiritual cognition</td><td>Intellectual ('Aql) dimension</td></tr>
+              <tr><td class="col-theory">🏗️ Constructivism</td><td>Active knowledge construction</td><td>'Ilm + 'Amal, Muzakarah</td><td>Active engagement; social learning</td><td>Subjective truth conflicts with wahy</td><td>Intellectual + Social dimensions</td></tr>
+              <tr><td class="col-theory">💛 Humanism</td><td>Self-actualization, personal growth</td><td>Fitrah, Karamah, Insan Kamil</td><td>Human dignity, intrinsic motivation</td><td>Secular self-focus vs. tawwhid</td><td>Emotional + Spiritual dimensions</td></tr>
+              <tr><td class="col-theory">🌐 Connectivism</td><td>Network-based distributed learning</td><td>Isnad, Ijazah, Ummah network</td><td>Distributed knowledge, community</td><td>No ethical/spiritual foundation</td><td>Social + Community dimensions</td></tr>
+              <tr><td class="col-theory">🔍 Metacognition</td><td>Self-awareness of learning processes</td><td>Muhasabah, Tafakkur, Niyyah</td><td>Self-monitoring, reflective practice</td><td>Secular — lacks divine accountability</td><td>Intellectual + Spiritual (Muhasabah)</td></tr>
+              <tr><td class="col-theory">🌈 Multiple Intelligences</td><td>Multiple distinct human capacities</td><td>Fitrah, Diverse human potential</td><td>Holistic development of all capacities</td><td>Lacks empirical neurological proof</td><td>All dimensions of Insan Kamil</td></tr>
+              <tr><td class="col-theory">👥 Social Learning</td><td>Observational, modeling, self-efficacy</td><td>Uswah Hasanah, Qudwah</td><td>Prophet ﷺ as perfect model</td><td>Social approval vs. Allah's rida</td><td>Social + Moral (Akhlaq) dimensions</td></tr>
+              <tr><td class="col-theory">🔄 Experiential</td><td>Cyclical experience-reflection-action</td><td>'Ilm→Tafakkur→'Amal cycle</td><td>Action-reflection; Hajj as learning</td><td>Human experience only — excludes wahy</td><td>All dimensions through action</td></tr>
+              <tr><td class="col-theory">🎓 Andragogy</td><td>Self-directed adult learning</td><td>Lifelong learning, Ijtihad</td><td>Voluntary learning; intrinsic motivation</td><td>Over-autonomy may conflict with adab</td><td>Intellectual autonomy + maturity</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- CONCLUSION -->
+    <section class="section" id="sec-conclusion">
+      <h2 class="section-heading"><span class="icon">🌟</span> Conclusion</h2>
+      <div class="callout callout-green">
+        <strong>🌙 Integrated Islamic Personality: Toward Insan Kamil</strong>
+        <p>This critical review demonstrates that Western learning theories — while offering valuable insights into observable behavior, cognitive processing, social construction, and personal development — remain incomplete without the Islamic dimension. Each theory illuminates one facet of the complex human learner, but none captures the full picture of insan kamil.</p>
+      </div>
+      <p class="text-xs text-muted mt-2">The Islamic Educational Psychology framework offers a comprehensive, integrated model that:</p>
+      <div class="grid-2 mt-2">
+        <div class="info-card"><h5>🔗 What the Integrated Model Offers</h5><ul><li>Takes from Behaviorism: <strong>Habit formation (adat)</strong> and consistent practice (istiqamah)</li><li>Takes from Cognitivism: <strong>Rational inquiry ('aql)</strong> and tafakkur as cognitive tools</li><li>Takes from Constructivism: <strong>Active engagement ('amal)</strong> and social learning (muzakarah)</li><li>Takes from Humanism: <strong>Human dignity (karamah)</strong> and fitrah as innate potential</li><li>Takes from Connectivism: <strong>Community network (ummah)</strong> and isnad as knowledge authentication</li><li>Takes from Metacognition: <strong>Muhasabah and niyyah</strong> as theocentric self-regulation</li><li>Takes from Multiple Intelligences: <strong>Holistic development</strong> of all human capacities</li><li>Takes from Social Learning: <strong>Uswah Hasanah</strong> as the supreme modeling framework</li><li>Takes from Experiential Learning: <strong>'Ilm + 'Amal</strong> cycle as transformative praxis</li><li>Takes from Andragogy: <strong>Lifelong learning</strong> as religious obligation</li></ul></div>
+        <div class="info-card"><h5>🌟 The Unique Islamic Contributions</h5><ul><li><strong>Wahy (Revelation)</strong> as the primary and most certain source of knowledge — transcending empirical and rational sources</li><li><strong>Ruh (Soul)</strong> as the dimension ignored by all secular theories — spiritual learning through ibadah, taqwa, and muraqabah</li><li><strong>Niyyah (Intention)</strong> as the motivational foundation — learning is 'ibadah when intended for Allah</li><li><strong>Insan Kamil</strong> as the comprehensive educational goal — a person integrated in mind, body, soul, and character</li><li><strong>Mantiq</strong> as the Islamic cognitive science — tasawwur and tasdiq as the epistemological framework for valid learning</li><li><strong>Sanad and Turath</strong> — knowledge must be traceable to verified authority, connecting learners to the Prophetic tradition</li><li><strong>Eschatological Accountability</strong> — learning has ultimate consequences in akhirah, not just worldly outcomes</li></ul></div>
+      </div>
+
+      <div class="diagram-container mt-3">
+        <div class="diagram-title">The Integrated Islamic Learning Model — Path to Insan Kamil</div>
+        <div class="mindmap">
+          <div class="mindmap-center">INSAN KAMIL<br>(Integrated Islamic Personality)</div>
+          <div class="mindmap-branches">
+            <div class="mindmap-branch"><div class="branch-label">🧠 'Aql</div><div class="branch-sub">Cognitivism + Mantiq</div></div>
+            <div class="mindmap-branch"><div class="branch-label">⚡ Jasad</div><div class="branch-sub">Behaviorism + 'Amal</div></div>
+            <div class="mindmap-branch"><div class="branch-label">🕌 Ruh</div><div class="branch-sub">Taqwa + Muraqabah</div></div>
+            <div class="mindmap-branch"><div class="branch-label">💛 Qalb</div><div class="branch-sub">Humanism + Fitrah</div></div>
+            <div class="mindmap-branch"><div class="branch-label">🤝 Mujtama'</div><div class="branch-sub">Social Learning + Ummah</div></div>
+            <div class="mindmap-branch"><div class="branch-label">📖 'Ilm</div><div class="branch-sub">Constructivism + Wahy</div></div>
+            <div class="mindmap-branch"><div class="branch-label">🔍 Tafakkur</div><div class="branch-sub">Metacognition + Muhasabah</div></div>
+            <div class="mindmap-branch"><div class="branch-label">🌐 Isnad</div><div class="branch-sub">Connectivism + Turath</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-gold mt-3">
+        <strong>📌 Final Statement</strong>
+        <p>Western learning theories are useful analytical tools for understanding aspects of human learning. However, Islamic Educational Psychology — rooted in the Quran, Sunnah, and the rich tradition of classical Muslim scholars — provides a more comprehensive, integrated, and complete model of human learning. The development of Integrated Islamic Personality (Insan Kamil) requires the harmonious integration of intellectual excellence ('ilm), spiritual depth (taqwa), moral character (akhlaq), social responsibility (mas'uliyyah), and purposeful action ('amal) — all guided by the divine light of revelation (wahy). This is the ultimate goal of Islamic education.</p>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+
+    <!-- REFERENCES -->
+    <section class="section" id="sec-references">
+      <h2 class="section-heading"><span class="icon">📚</span> References</h2>
+      <ol class="references-list">
+        <li><span class="ref-authors">Al-Ghazali, A. H. M.</span> (1990). <span class="ref-title">Ihya' Ulum al-Din</span> (Vols. 1–4). <span class="ref-journal">Dar al-Kutub al-Ilmiyyah.</span></li>
+        <li><span class="ref-authors">Ibn Khaldun, A. Z.</span> (2005). <span class="ref-title">Muqaddimah: An Introduction to History</span> (F. Rosenthal, Trans.). <span class="ref-journal">Princeton University Press.</span> (Original work written 1377)</li>
+        <li><span class="ref-authors">Ibn Sina (Avicenna).</span> (1952). <span class="ref-title">Kitab al-Shifa' (The Book of Healing).</span> <span class="ref-journal">Cairo: General Egyptian Book Organization.</span></li>
+        <li><span class="ref-authors">Bandura, A.</span> (1977). <span class="ref-title">Social learning theory.</span> <span class="ref-journal">Prentice Hall.</span></li>
+        <li><span class="ref-authors">Bandura, A.</span> (1986). <span class="ref-title">Social foundations of thought and action: A social cognitive theory.</span> <span class="ref-journal">Prentice Hall.</span></li>
+        <li><span class="ref-authors">Bloom, B. S., Engelhart, M. D., Furst, E. J., Hill, W. H., & Krathwohl, D. R.</span> (1956). <span class="ref-title">Taxonomy of educational objectives: The classification of educational goals. Handbook I: Cognitive Domain.</span> <span class="ref-journal">David McKay.</span></li>
+        <li><span class="ref-authors">Gardner, H.</span> (1983). <span class="ref-title">Frames of mind: The theory of multiple intelligences.</span> <span class="ref-journal">Basic Books.</span></li>
+        <li><span class="ref-authors">Gardner, H.</span> (1999). <span class="ref-title">Intelligence reframed: Multiple intelligences for the 21st century.</span> <span class="ref-journal">Basic Books.</span></li>
+        <li><span class="ref-authors">Kolb, D. A.</span> (1984). <span class="ref-title">Experiential learning: Experience as the source of learning and development.</span> <span class="ref-journal">Prentice Hall.</span></li>
+        <li><span class="ref-authors">Knowles, M. S.</span> (1980). <span class="ref-title">The modern practice of adult education: From pedagogy to andragogy</span> (2nd ed.). <span class="ref-journal">Cambridge Book Company.</span></li>
+        <li><span class="ref-authors">Knowles, M. S., Holton, E. F., & Swanson, R. A.</span> (2015). <span class="ref-title">The adult learner: The definitive classic in adult education and human resource development</span> (8th ed.). <span class="ref-journal">Routledge.</span></li>
+        <li><span class="ref-authors">Maslow, A. H.</span> (1943). A theory of human motivation. <span class="ref-title">Psychological Review, 50</span>(4), 370–396. <span class="ref-journal">https://doi.org/10.1037/h0054346</span></li>
+        <li><span class="ref-authors">Piaget, J.</span> (1970). <span class="ref-title">Science of education and the psychology of the child.</span> <span class="ref-journal">Orion Press.</span></li>
+        <li><span class="ref-authors">Rogers, C. R.</span> (1969). <span class="ref-title">Freedom to learn: A view of what education might become.</span> <span class="ref-journal">Charles E. Merrill.</span></li>
+        <li><span class="ref-authors">Siemens, G.</span> (2005). Connectivism: A learning theory for the digital age. <span class="ref-title">International Journal of Instructional Technology and Distance Learning, 2</span>(1), 3–10.</li>
+        <li><span class="ref-authors">Skinner, B. F.</span> (1938). <span class="ref-title">The behavior of organisms: An experimental analysis.</span> <span class="ref-journal">Appleton-Century-Crofts.</span></li>
+        <li><span class="ref-authors">Vygotsky, L. S.</span> (1978). <span class="ref-title">Mind in society: The development of higher psychological processes.</span> <span class="ref-journal">Harvard University Press.</span></li>
+        <li><span class="ref-authors">Zimmerman, B. J.</span> (1990). Self-regulated learning and academic achievement: An overview. <span class="ref-title">Educational Psychologist, 25</span>(1), 3–17.</li>
+        <li><span class="ref-authors">Flavell, J. H.</span> (1976). Metacognitive aspects of problem solving. In L. B. Resnick (Ed.), <span class="ref-title">The nature of intelligence</span> (pp. 231–235). <span class="ref-journal">Lawrence Erlbaum.</span></li>
+        <li><span class="ref-authors">Malik, M. N., & Ahmed, A.</span> (2012). Influential thoughts of Muslim thinkers about the education system: Imam Ghazali and Ibn Khaldun. <span class="ref-title">Gomal University Journal of Research, 28</span>(1), 62–70.</li>
+        <li><span class="ref-authors">Tamuri, A. H., & Ajuhary, M. K.</span> (2010). Amalan Pengajaran Guru Pendidikan Islam Berkesan Berteraskan Konsep Muallim. <span class="ref-title">Journal of Islamic and Arabic Education, 2</span>(1), 43–56.</li>
+        <li><span class="ref-authors">Halstead, J. M.</span> (2004). An Islamic concept of education. <span class="ref-title">Comparative Education, 40</span>(4), 517–529.</li>
+        <li><span class="ref-authors">Ahmad, S., & Uyun, Q.</span> (2024). Psychology of learning from an Islamic perspective. <span class="ref-title">Journal of Islamic Educational Psychology, 5</span>(2), 45–63.</li>
+        <li><span class="ref-authors">Ibrahim, S. N., Abd Rahim, S. I., & Mustofa, M. I.</span> (2025). Talaqqi Method in Teaching and Learning for the Preservation of Islamic Knowledge. In <span class="ref-title">Advances in Social Science and Education</span>. Springer.</li>
+        <li><span class="ref-authors">Muftī Wilāyah Persekutuan.</span> (2018). <span class="ref-title">Irsyad al-Fatwa #252: The Ruling of Learning Mantiq.</span> Retrieved from https://www.muftiwp.gov.my</li>
+        <li><span class="ref-authors">Siemens, G., & Downes, S.</span> (2009). Connectivism and connective knowledge. <span class="ref-title">Online course, University of Manitoba.</span></li>
+        <li><span class="ref-authors">Ashraf, A.</span> (2025). Integrating western learning theories with Islamic pedagogy. <span class="ref-title">LinkedIn Pulse, January 7, 2025.</span></li>
+        <li><span class="ref-authors">Duke, B., Harper, G., & Johnston, M.</span> (2013). Connectivism as a digital age learning theory. <span class="ref-title">The International HETL Review, Special Issue,</span> 4–13.</li>
+        <li><span class="ref-authors">Febriansyah, et al.</span> (2024). Holistic educational practices: Merging educational psychology with Islamic education. <span class="ref-title">RSIS International Journal, 8</span>(9), 1–18.</li>
+        <li><span class="ref-authors">Al-Hazimi, A. I. U.</span> (n.d.). <span class="ref-title">Al-Syarh al-Mukhtasar li al-Sullam al-Munawraq.</span> <span class="ref-journal">[Classical text on Islamic logic/mantiq].</span></li>
+        <li><span class="ref-authors">Tafsir, A.</span> (2019). <span class="ref-title">Ilmu Pendidikan dalam Perspektif Islam</span> (Revised ed.). <span class="ref-journal">Remaja Rosdakarya.</span></li>
+        <li><span class="ref-authors">Chanifah, N., et al.</span> (2021). Multiple intelligences and Islamic education. In <span class="ref-title">Proceedings of International Conference on Islamic Education.</span> UIN Malang.</li>
+        <li><span class="ref-authors">Ibrahim, F., & Ibrahim, A.</span> (2025). Integrating self-regulated learning within the Islamic educational framework. <span class="ref-title">Dialogium Journal, UNY,</span> 1–18. https://doi.org/10.21831/dialogium</li>
+        <li><span class="ref-authors">Muslim Heritage Foundation.</span> (2009). Al-Ghazali's theory of education. Retrieved from https://muslimheritage.com/al-ghazalis-theory-of-education/</li>
+        <li><span class="ref-authors">IIUM News.</span> (2024, December 7). Reviving turath: Bridging classical and modern approaches in Islamic education. <span class="ref-title">IIUM News.</span> https://news.iium.edu.my/?p=181915</li>
+      </ol>
+    </section>
+
+  </div><!-- /content-inner -->
+</main>
+
+<script>
+// Theme toggle
+(function(){
+  const btn = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+  root.setAttribute('data-theme', d);
+  btn && btn.addEventListener('click', () => {
+    d = d === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', d);
+    btn.innerHTML = d === 'dark'
+      ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  });
+})();
+
+// Toggle card
+function toggleCard(id) {
+  const card = document.getElementById(id);
+  if (card) card.classList.toggle('open');
+}
+
+// Expand/Collapse all
+function expandAll() {
+  document.querySelectorAll('.theory-card').forEach(c => c.classList.add('open'));
+}
+function collapseAll() {
+  document.querySelectorAll('.theory-card').forEach(c => c.classList.remove('open'));
+}
+
+// Tab switching
+function switchTab(btn, prefix, tab) {
+  const nav = btn.closest('.tab-nav');
+  const body = nav.nextElementSibling;
+  let panel = body;
+  while (panel && !panel.classList.contains('tab-panel')) panel = panel.nextElementSibling;
+  // deactivate all buttons in this nav
+  nav.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // hide all panels in this theory body
+  const allPanels = btn.closest('.theory-body-inner').querySelectorAll('.tab-panel');
+  allPanels.forEach(p => p.classList.remove('active'));
+  const target = document.getElementById(prefix + '-' + tab);
+  if (target) target.classList.add('active');
+}
+
+// Scroll navigation
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// Active nav tracking + progress
+function updateProgress() {
+  const main = document.getElementById('main-content');
+  const total = main.scrollHeight - main.clientHeight;
+  const pct = total > 0 ? Math.round((main.scrollTop / total) * 100) : 0;
+  document.getElementById('progress-bar').style.width = pct + '%';
+  document.getElementById('progress-pct').textContent = pct + '%';
+
+  // Update active nav
+  const sections = document.querySelectorAll('.section');
+  const navItems = document.querySelectorAll('.nav-item[data-section]');
+  let active = null;
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top <= 120) active = sec.id;
+  });
+  navItems.forEach(item => {
+    const isActive = item.getAttribute('data-section') === active;
+    item.classList.toggle('active', isActive);
+    if (isActive) {
+      const label = item.textContent.trim();
+      document.getElementById('current-section').textContent = label;
+    }
+  });
+}
+
+// Mobile sidebar
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+  sidebar.classList.toggle('open');
+  overlay.classList.toggle('show');
+}
+
+// Initialize first card open
+document.addEventListener('DOMContentLoaded', () => {
+  updateProgress();
+});
+</script>
+</body>
+</html>
